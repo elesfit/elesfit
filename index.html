@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leandro Espinosa — Personal Trainer</title>
+  <meta name="description" content="Personal Trainer, Instructor de Musculación & Coach de Transformación Física. +5 años de experiencia. Parque Avellaneda, CABA.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Leandro Espinosa — Personal Trainer">
+  <meta property="og:description" content="Personal Trainer, Instructor de Musculación & Coach de Transformación Física. +5 años de experiencia. Parque Avellaneda, CABA.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/elesfit/elesfit/main/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/elesfit/elesfit/main/og-image.jpg">
+  <link rel="manifest" href="__ZAPIA_SITE_URL__/manifest.webmanifest">
+  <meta name="theme-color" content="#b91c1c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Leandro Espinosa">
+  <link rel="apple-touch-icon" href="__ZAPIA_SITE_URL__/apple-touch-icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #b91c1c;
+      --red-dark: #991b1b;
+      --bg: #f9f9f9;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+
+    .hero-name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: 0.95rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-contacts {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 18px;
+    }
+
+    .hero-contacts a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.95;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hero-contacts a:hover { opacity: 1; text-decoration: underline; }
+
+    /* ── PROFILE PHOTO ── */
+    .hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      background: var(--red);
+      color: #fff;
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.97rem;
+      line-height: 1.65;
+    }
+
+    .intro strong { font-weight: 700; }
+
+    /* ── MAIN LAYOUT ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 16px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: var(--red);
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    /* ── EXPERIENCE ── */
+    .job + .job {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .job-role {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .job-meta {
+      font-size: 0.85rem;
+      color: var(--red);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .job-tasks {
+      margin-top: 10px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .job-tasks li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .job-tasks li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--red);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item + .edu-item {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .edu-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .edu-sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .skill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    /* ── REFERENCES ── */
+    .ref-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+      text-align: center;
+      padding: 16px 20px;
+    }
+
+    /* ── CONTACT CTA ── */
+    .cta {
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 14px rgba(185,28,28,0.35);
+    }
+
+    .cta a:hover { background: var(--red-dark); }
+
+    .cta-label {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="hero-photo" src="https://raw.githubusercontent.com/elesfit/elesfit/main/og-image.jpg" alt="Leandro Espinosa">
+    <div class="hero-name">Leandro Espinosa</div>
+    <div class="hero-title">Personal Trainer · Instructor de Musculación · Coach de Transformación Física</div>
+    <div class="hero-contacts">
+      <a href="tel:+541169128457">📞 11 6912-8457</a>
+      <a href="mailto:elesfit@gmail.com">✉️ elesfit@gmail.com</a>
+      <a href="https://www.instagram.com/elesfit.ar" target="_blank">📸 @elesfit.ar</a>
+      <a href="#">📍 Parque Avellaneda, CABA</a>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    Entrenador personal apasionado con más de 5 años de experiencia ayudando a personas a alcanzar su mejor versión física.<br>
+    <strong>Especializado en ganancia muscular, recomposición corporal y entrenamientos funcionales adaptados.</strong><br>
+    Enfoque 100% personalizado y compromiso con los resultados.
+  </div>
+
+  <div class="container">
+
+    <!-- EXPERIENCIA LABORAL -->
+    <div class="card">
+      <div class="card-header">Experiencia Laboral</div>
+      <div class="card-body">
+
+        <div class="job">
+          <div class="job-role">Instructor de Musculación</div>
+          <div class="job-meta">Pride Sport · Feb 2024 – Actualidad</div>
+          <ul class="job-tasks">
+            <li>Evaluación física personalizada y diseño de rutinas específicas</li>
+            <li>Supervisión técnica de los ejercicios</li>
+            <li>Seguimiento de progresos físicos</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-role">Instructor de Musculación</div>
+          <div class="job-meta">Barrio Nuevo Gym · Abr 2022 – Feb 2024</div>
+          <ul class="job-tasks">
+            <li>Coordinación del salón de musculación</li>
+            <li>Asistencia constante y corrección postural</li>
+            <li>Creación de rutinas con distintos objetivos</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-role">Instructor de Musculación</div>
+          <div class="job-meta">Apo Gimnasio · Jun 2021 – Feb 2022</div>
+          <ul class="job-tasks">
+            <li>Atención al cliente y diseño de rutinas personalizadas</li>
+            <li>Apertura/cierre del gimnasio y gestión de caja</li>
+            <li>Estiramientos especializados y asesoramiento post-entrenamiento</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EDUCACIÓN -->
+    <div class="card">
+      <div class="card-header">Educación &amp; Certificaciones</div>
+      <div class="card-body">
+
+        <div class="edu-item">
+          <div class="edu-title">UDEMY — 2023</div>
+          <div class="edu-sub">Nutrición Fitness Para Pérdida de Peso y/o Ganancia Muscular</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-title">APFI — 2021</div>
+          <div class="edu-sub">Instructorado en Musculación y Personal Trainer</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-title">APFI — 2021</div>
+          <div class="edu-sub">Certificación en Entrenamiento Funcional y HIIT</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- APTITUDES -->
+    <div class="card">
+      <div class="card-header">Aptitudes Destacadas</div>
+      <div class="card-body">
+        <div class="skills-grid">
+          <div class="skill-item"><div class="skill-dot"></div><span>Excelente trato personal y profesional</span></div>
+          <div class="skill-item"><div class="skill-dot"></div><span>Alto compromiso con los objetivos de cada persona</span></div>
+          <div class="skill-item"><div class="skill-dot"></div><span>Capacidad para motivar e inspirar</span></div>
+          <div class="skill-item"><div class="skill-dot"></div><span>Enfoque personalizado en cada proceso</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERENCIAS -->
+    <div class="card">
+      <div class="card-header">Referencias</div>
+      <div class="ref-note">Referencias disponibles a solicitud.</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <a href="mailto:elesfit@gmail.com">Contactame</a>
+      <a href="https://www.instagram.com/elesfit.ar" target="_blank">Instagram</a>
+      <div class="cta-label">elesfit@gmail.com · 11 6912-8457 · @elesfit.ar</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
