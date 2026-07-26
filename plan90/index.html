@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PLAN 90KG ELESFIT</title>
+  <meta name="description" content="Plan completo de entrenamiento, alimentación y ciclo para llegar a 90 kg — Leandro Espinosa / ELESFIT">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PLAN 90KG ELESFIT">
+  <meta property="og:description" content="Plan completo de entrenamiento, alimentación y ciclo para llegar a 90 kg — Leandro Espinosa / ELESFIT">
+  <meta property="og:image" content="https://elesfit.github.io/elesfit/plan/preview.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PLAN 90KG ELESFIT">
+  <meta name="twitter:description" content="Plan completo de entrenamiento, alimentación y ciclo — ELESFIT">
+  <meta name="twitter:image" content="https://elesfit.github.io/elesfit/plan/preview.jpg">
+  <meta property="og:image" content="__ZAPIA_SITE_ORIGIN__/_z/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="__ZAPIA_SITE_ORIGIN__/_z/og.png">
+  <meta name="theme-color" content="#C0392B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="ELESFIT Plan">
+  <link rel="manifest" href="__ZAPIA_SITE_URL__/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="__ZAPIA_SITE_URL__/apple-touch-icon.png">
+  <style>
+    :root {
+      --red: #C0392B;
+      --red-dark: #96281B;
+      --red-light: #F9EBEA;
+      --blue: #2471A3;
+      --blue-light: #EBF5FB;
+      --green: #1E8449;
+      --green-light: #EAFAF1;
+      --orange: #D35400;
+      --orange-light: #FDF2E9;
+      --gray: #F4F6F7;
+      --text: #1C2833;
+      --muted: #7F8C8D;
+      --border: #E5E8E8;
+      --white: #FFFFFF;
+      --radius: 14px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F0F2F5;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--red);
+      color: white;
+      padding: 28px 20px 20px;
+      text-align: center;
+    }
+    header .logo-text {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    header .subtitle {
+      font-size: 13px;
+      opacity: 0.85;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ÍNDICE */
+    .index-nav {
+      background: var(--white);
+      margin: 16px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .index-nav h2 {
+      background: var(--red);
+      color: white;
+      padding: 12px 18px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .index-nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .index-nav a:last-child { border-bottom: none; }
+    .index-nav a:active { background: var(--gray); }
+    .index-nav .icon { font-size: 20px; width: 28px; text-align: center; }
+    .index-nav .arrow { margin-left: auto; color: var(--muted); }
+
+    /* SECTION HEADERS */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 16px 10px;
+    }
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .section-header .emoji { font-size: 24px; }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      margin: 0 16px 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-header h3 { font-size: 16px; font-weight: 800; }
+    .card-header .muscles { font-size: 12px; color: white; opacity: 0.9; margin-top: 2px; }
+
+    /* COLORES POR DÍA */
+    .day-blue .card-header { background: var(--blue); color: white; }
+    .day-red .card-header { background: var(--red); color: white; }
+    .day-green .card-header { background: var(--green); color: white; }
+    .day-orange .card-header { background: var(--orange); color: white; }
+
+    /* TABLA DE EJERCICIOS */
+    .exercise-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .exercise-table thead {
+      background: var(--gray);
+    }
+    .exercise-table th {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+    }
+    .exercise-table td {
+      padding: 10px 10px;
+      font-size: 13.5px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .exercise-table tr:last-child td { border-bottom: none; }
+    .exercise-table tr:nth-child(even) { background: #FAFAFA; }
+
+    .ex-name { font-weight: 700; color: var(--text); }
+    .ex-reps { color: var(--blue); font-weight: 600; }
+    .ex-rir { color: var(--red); font-weight: 600; }
+    .tag {
+      display: inline-block;
+      background: var(--red-light);
+      color: var(--red-dark);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      margin-top: 3px;
+    }
+    .tag.blue { background: var(--blue-light); color: var(--blue); }
+    .tag.green { background: var(--green-light); color: var(--green); }
+    .tag.orange { background: var(--orange-light); color: var(--orange); }
+
+    /* NOTA AL PIE DE CARD */
+    .card-note {
+      background: var(--gray);
+      padding: 10px 14px;
+      font-size: 12.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* REGLAS GENERALES */
+    .rules-card {
+      background: var(--white);
+      margin: 0 16px 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .rules-card .rules-header {
+      background: #2C3E50;
+      color: white;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .rules-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .rules-card ul li {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13.5px;
+      display: flex;
+      gap: 8px;
+    }
+    .rules-card ul li:last-child { border-bottom: none; }
+
+    /* ALIMENTACIÓN */
+    .meal-card {
+      background: var(--white);
+      margin: 0 16px 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .meal-header {
+      background: var(--orange);
+      color: white;
+      padding: 14px 16px;
+    }
+    .meal-header .time { font-size: 22px; font-weight: 900; }
+    .meal-header .meal-name { font-size: 14px; opacity: 0.9; margin-top: 2px; }
+    .meal-items {
+      padding: 0;
+    }
+    .meal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13.5px;
+    }
+    .meal-item:last-child { border-bottom: none; }
+    .meal-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .meal-section-label {
+      background: var(--gray);
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* CICLO */
+    .cycle-week {
+      background: var(--white);
+      margin: 0 16px 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .cycle-week-header {
+      padding: 12px 16px;
+      color: white;
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .cycle-active { background: var(--red); }
+    .cycle-hcg { background: var(--orange); }
+    .cycle-wait { background: var(--muted); }
+    .cycle-pct1 { background: var(--blue); }
+    .cycle-pct2 { background: var(--green); }
+
+    .cycle-day {
+      display: flex;
+      align-items: flex-start;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+      font-size: 13.5px;
+    }
+    .cycle-day:last-child { border-bottom: none; }
+    .cycle-day .day-name {
+      font-weight: 700;
+      min-width: 80px;
+      color: var(--text);
+    }
+    .cycle-day .day-content { color: var(--text); }
+    .cycle-day .nothing { color: var(--muted); font-style: italic; }
+
+    /* SHOP LIST */
+    .shop-list {
+      background: var(--white);
+      margin: 0 16px 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .shop-list .shop-header {
+      background: #2C3E50;
+      color: white;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .shop-list ul {
+      list-style: none;
+      padding: 0;
+    }
+    .shop-list ul li {
+      padding: 9px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13.5px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .shop-list ul li:last-child { border-bottom: none; }
+
+    /* TIMELINE */
+    .timeline {
+      background: var(--white);
+      margin: 0 16px 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .timeline .tl-header {
+      background: #2C3E50;
+      color: white;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .tl-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-date { font-weight: 700; min-width: 75px; color: var(--red); font-size: 13px; }
+    .tl-desc { font-size: 13.5px; }
+
+    /* SPACER */
+    .spacer { height: 20px; }
+    .section-spacer { height: 8px; }
+
+    /* BACK TO TOP */
+    .back-top {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+
+    /* ANCHOR OFFSET */
+    .anchor { display: block; height: 0; visibility: hidden; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-text">ELESFIT</div>
+  <div class="subtitle">Plan Completo · Leandro Espinosa</div>
+</header>
+
+<!-- ÍNDICE -->
+<div class="index-nav">
+  <h2>📋 Índice</h2>
+  <a href="#entrenamiento">
+    <span class="icon">🏋️</span> Entrenamiento
+    <span class="arrow">›</span>
+  </a>
+  <a href="#alimentacion">
+    <span class="icon">🍽️</span> Alimentación
+    <span class="arrow">›</span>
+  </a>
+  <a href="#ciclo">
+    <span class="icon">💉</span> Ciclo
+    <span class="arrow">›</span>
+  </a>
+  <a href="#compras-ciclo">
+    <span class="icon">🛒</span> Lista de compras
+    <span class="arrow">›</span>
+  </a>
+  <a href="#timeline">
+    <span class="icon">📅</span> Línea de tiempo
+    <span class="arrow">›</span>
+  </a>
+</div>
+
+<!-- ==================== ENTRENAMIENTO ==================== -->
+<a class="anchor" id="entrenamiento"></a>
+<div class="section-header">
+  <span class="emoji">🏋️</span>
+  <h2>Entrenamiento</h2>
+</div>
+
+<!-- LUNES -->
+<div class="card day-blue">
+  <div class="card-header">
+    <div>
+      <h3>🔵 LUNES — DÍA 1</h3>
+      <div class="muscles">Pierna A · Cuádriceps</div>
+    </div>
+  </div>
+  <table class="exercise-table">
+    <thead>
+      <tr>
+        <th>Ejercicio</th>
+        <th>Series × Reps</th>
+        <th>RIR</th>
+        <th>Descanso</th>
+        <th>Técnica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ex-name">1. Gemelos de pie</span></td>
+        <td><span class="ex-reps">4 × 8-12</span></td>
+        <td><span class="ex-rir">1-2</span></td>
+        <td>60-90 seg</td>
+        <td><span class="tag">Excéntrica 3 seg</span></td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">2. Aductor unilateral en polea</span></td>
+        <td><span class="ex-reps">3 × 12-15</span> c/pierna</td>
+        <td><span class="ex-rir">1-2</span></td>
+        <td>60 seg</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">3. Hack Squat</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 6-8</span><br>
+          <span class="ex-reps">2 Back-off × 8-10</span>
+        </td>
+        <td>
+          <span class="ex-rir">0-1</span><br>
+          <span class="ex-rir">1-2</span>
+        </td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">4. Prensa 45°</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 8-10</span><br>
+          <span class="ex-reps">1 Back-off × 10-12</span>
+        </td>
+        <td>
+          <span class="ex-rir">0-1</span><br>
+          <span class="ex-rir">1-2</span>
+        </td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">5. Extensión de cuádriceps</span></td>
+        <td><span class="ex-reps">1 Top Set × 12-15</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td><span class="tag">Triple Dropset</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- MARTES -->
+<div class="card day-red">
+  <div class="card-header">
+    <div>
+      <h3>🔴 MARTES — DÍA 2</h3>
+      <div class="muscles">Pecho + Hombro + Tríceps</div>
+    </div>
+  </div>
+  <table class="exercise-table">
+    <thead>
+      <tr>
+        <th>Ejercicio</th>
+        <th>Series × Reps</th>
+        <th>RIR</th>
+        <th>Descanso</th>
+        <th>Técnica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ex-name">1. Press inclinado con mancuernas</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 6-8</span><br>
+          <span class="ex-reps">2 Back-off × 8-10</span>
+        </td>
+        <td>
+          <span class="ex-rir">0-1</span><br>
+          <span class="ex-rir">1-2</span>
+        </td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">2. Press plano con mancuernas</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 8-10</span><br>
+          <span class="ex-reps">1 Back-off × 10-12</span>
+        </td>
+        <td>
+          <span class="ex-rir">0-1</span><br>
+          <span class="ex-rir">1-2</span>
+        </td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">3. Cruces en polea</span></td>
+        <td><span class="ex-reps">3 × 12-15</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">4. Elevaciones laterales (mancuernas)</span></td>
+        <td><span class="ex-reps">3 × 12-15</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td><span class="tag">Última serie Rest-Pause</span></td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">5. Elevaciones laterales en polea</span></td>
+        <td><span class="ex-reps">2 × 15-20</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60 seg</td>
+        <td><span class="tag green">Tensión en estiramiento</span></td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">6. Tríceps en polea</span></td>
+        <td><span class="ex-reps">3 × 10-12</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- MIÉRCOLES -->
+<div class="card day-green">
+  <div class="card-header">
+    <div>
+      <h3>🟢 MIÉRCOLES — DÍA 3</h3>
+      <div class="muscles">Femoral + Glúteo</div>
+    </div>
+  </div>
+  <table class="exercise-table">
+    <thead>
+      <tr>
+        <th>Ejercicio</th>
+        <th>Series × Reps</th>
+        <th>RIR</th>
+        <th>Descanso</th>
+        <th>Técnica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ex-name">1. Gemelos sentado</span></td>
+        <td><span class="ex-reps">4 × 12-15</span></td>
+        <td><span class="ex-rir">1-2</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">2. Peso muerto rumano</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 6-8</span><br>
+          <span class="ex-reps">2 Back-off × 8-10</span>
+        </td>
+        <td>
+          <span class="ex-rir">0-1</span><br>
+          <span class="ex-rir">1-2</span>
+        </td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">3. Curl femoral sentado</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 8-10</span><br>
+          <span class="ex-reps">1 Back-off × 10-12</span>
+        </td>
+        <td>
+          <span class="ex-rir">0-1</span><br>
+          <span class="ex-rir">1-2</span>
+        </td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">4. Hip Thrust</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 8-10</span><br>
+          <span class="ex-reps">2 Back-off × 10-12</span>
+        </td>
+        <td>
+          <span class="ex-rir">0-1</span><br>
+          <span class="ex-rir">1-2</span>
+        </td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- VIERNES -->
+<div class="card day-blue">
+  <div class="card-header">
+    <div>
+      <h3>🔵 VIERNES — DÍA 4</h3>
+      <div class="muscles">Espalda + Bíceps</div>
+    </div>
+  </div>
+  <table class="exercise-table">
+    <thead>
+      <tr>
+        <th>Ejercicio</th>
+        <th>Series × Reps</th>
+        <th>RIR</th>
+        <th>Descanso</th>
+        <th>Técnica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ex-name">1. Jalón neutro</span></td>
+        <td><span class="ex-reps">3 × 8-10</span></td>
+        <td><span class="ex-rir">1-2</span></td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">2. Remo unilateral convergente</span></td>
+        <td><span class="ex-reps">3 × 8-10</span></td>
+        <td><span class="ex-rir">1-2</span></td>
+        <td>2-3 min</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">3. Pullover en polea</span></td>
+        <td><span class="ex-reps">2 × 12-15</span></td>
+        <td><span class="ex-rir">1-2</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">4. Scott unilateral</span></td>
+        <td><span class="ex-reps">3 × 8-10</span></td>
+        <td><span class="ex-rir">0-1</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">5. Curl Bayesian</span></td>
+        <td><span class="ex-reps">3 × 10-12</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">6. Martillo en polea</span></td>
+        <td><span class="ex-reps">2 × 12-15</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SÁBADO -->
+<div class="card day-green">
+  <div class="card-header">
+    <div>
+      <h3>🟢 SÁBADO — DÍA 5</h3>
+      <div class="muscles">Pierna C · Metabólico</div>
+    </div>
+  </div>
+  <table class="exercise-table">
+    <thead>
+      <tr>
+        <th>Ejercicio</th>
+        <th>Series × Reps</th>
+        <th>RIR</th>
+        <th>Descanso</th>
+        <th>Técnica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ex-name">1. Gemelos en prensa</span></td>
+        <td><span class="ex-reps">4 × 15-20</span></td>
+        <td><span class="ex-rir">1-2</span></td>
+        <td>60-90 seg</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">2. Prensa 45°</span></td>
+        <td>
+          <span class="ex-reps">1 Top Set × 15-20</span><br>
+          <span class="ex-reps">1 Back-off</span>
+        </td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>2-3 min</td>
+        <td><span class="tag">Back-off Rest-Pause</span></td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">3. Extensión de cuádriceps (sillón)</span></td>
+        <td><span class="ex-reps">1 × 15</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td><span class="tag">Triple Dropset</span></td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">4. Curl femoral sentado (sillón)</span></td>
+        <td><span class="ex-reps">2 × 15-20</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60-90 seg</td>
+        <td><span class="tag">Última serie Rest-Pause</span></td>
+      </tr>
+      <tr>
+        <td><span class="ex-name">5. Abductores en polea</span></td>
+        <td><span class="ex-reps">3 × 15-20</span></td>
+        <td><span class="ex-rir">Fallo</span></td>
+        <td>60 seg</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- MICROFRECUENCIA GEMELOS -->
+<div class="rules-card">
+  <div class="rules-header">🔥 Microfrecuencia Gemelos — Todos los días</div>
+  <ul>
+    <li>⏱️ <span>2-3 series · 15-20 repeticiones</span></li>
+    <li>🔄 <span>Alternar: rodilla extendida / rodilla flexionada / excéntrica lenta</span></li>
+    <li>⏸️ <span>Descanso: 60 seg entre series</span></li>
+    <li>🎯 <span>Llegar a fallo o muy cerca en cada serie</span></li>
+  </ul>
+</div>
+
+<!-- REGLAS GENERALES ENTRENO -->
+<div class="rules-card">
+  <div class="rules-header">⏱️ Descansos y 🎯 Intensidad</div>
+  <ul>
+    <li>🏋️ <span><strong>Compuestos:</strong> 2-3 minutos</span></li>
+    <li>💪 <span><strong>Aislados:</strong> 60-90 segundos</span></li>
+    <li>🎯 <span><strong>Top Set:</strong> 0-1 RIR (muy cerca del fallo)</span></li>
+    <li>📉 <span><strong>Back-off:</strong> 1-2 RIR</span></li>
+    <li>🔥 <span><strong>Aislados (última serie):</strong> fallo controlado</span></li>
+  </ul>
+</div>
+
+<a class="back-top" href="#entrenamiento">↑ Volver al índice</a>
+
+<!-- ==================== ALIMENTACIÓN ==================== -->
+<a class="anchor" id="alimentacion"></a>
+<div class="section-header">
+  <span class="emoji">🍽️</span>
+  <h2>Alimentación</h2>
+</div>
+
+<!-- META -->
+<div class="rules-card">
+  <div class="rules-header">🎯 Objetivo calórico diario</div>
+  <ul>
+    <li>🔥 <span><strong>Calorías:</strong> ~3.900–4.100 kcal/día (días de entreno) · ~3.400–3.600 kcal (días de descanso)</span></li>
+    <li>💪 <span><strong>Proteínas:</strong> 180–195 g/día — distribuidas en 5–6 comidas, mínimo 35–40 g por toma</span></li>
+    <li>🍚 <span><strong>Carbohidratos:</strong> concentrados en desayuno, pre-entreno y post-entreno</span></li>
+    <li>💧 <span><strong>Agua:</strong> 3–4 litros diarios</span></li>
+  </ul>
+</div>
+
+<!-- DESAYUNO -->
+<div class="meal-card">
+  <div class="meal-header">
+    <div class="time">🕤 09:30 — Desayuno</div>
+    <div class="meal-name">Sólido + Batido · ~900–950 kcal · ~55 g proteína</div>
+  </div>
+  <div class="meal-section-label">Sólido</div>
+  <div class="meal-items">
+    <div class="meal-item"><div class="dot"></div>4 huevos (revueltos, duros o al plato)</div>
+    <div class="meal-item"><div class="dot"></div>4 rebanadas de pan tostado</div>
+  </div>
+  <div class="meal-section-label">Batido</div>
+  <div class="meal-items">
+    <div class="meal-item"><div class="dot"></div>500 ml leche entera</div>
+    <div class="meal-item"><div class="dot"></div>80 g harina de avena</div>
+    <div class="meal-item"><div class="dot"></div>1 banana</div>
+    <div class="meal-item"><div class="dot"></div>30 g mantequilla de maní</div>
+    <div class="meal-item"><div class="dot"></div>5 g creatina monohidrato</div>
+  </div>
+</div>
+
+<!-- PRE-ENTRENO -->
+<div class="meal-card">
+  <div class="meal-header" style="background: #E67E22;">
+    <div class="time">🕦 11:30 — Pre-entreno</div>
+    <div class="meal-name">Comida sólida · ~800–850 kcal · ~50 g proteína · Salís a las 12:00</div>
+  </div>
+  <div class="meal-items">
+    <div class="meal-item"><div class="dot" style="background:#E67E22;"></div>200 g pollo</div>
+    <div class="meal-item"><div class="dot" style="background:#E67E22;"></div>150 g arroz en crudo (o pasta equivalente)</div>
+    <div class="meal-item"><div class="dot" style="background:#E67E22;"></div>1 cucharada de aceite de oliva</div>
+    <div class="meal-item"><div class="dot" style="background:#E67E22;"></div>1 fruta (manzana o naranja)</div>
+    <div class="meal-item"><div class="dot" style="background:#E67E22;"></div>Cafeína: 100–200 mg (opcional, 30 min antes del entreno)</div>
+  </div>
+</div>
+
+<!-- ENTRENAMIENTO -->
+<div class="rules-card">
+  <div class="rules-header" style="background: var(--blue);">🏋️ 14:00–16:00 — Entrenamiento</div>
+  <ul>
+    <li>💧 <span>500–750 ml de agua durante el entreno</span></li>
+    <li>🍌 <span>Banana o fruta pequeña si el entreno supera 90 min o te sentís con poca energía</span></li>
+  </ul>
+</div>
+
+<!-- POST-ENTRENO -->
+<div class="meal-card">
+  <div class="meal-header" style="background: var(--green);">
+    <div class="time">🕓 16:00 — Post-entreno</div>
+    <div class="meal-name">Comida sólida · ~850–900 kcal · ~55 g proteína · Ventana anabólica</div>
+  </div>
+  <div class="meal-items">
+    <div class="meal-item"><div class="dot" style="background:var(--green);"></div>200 g carne picada magra o pollo</div>
+    <div class="meal-item"><div class="dot" style="background:var(--green);"></div>350 g arroz cocido, pasta o puré de papa</div>
+    <div class="meal-item"><div class="dot" style="background:var(--green);"></div>Verdura: tomate o zanahoria (fibra y micronutrientes)</div>
+    <div class="meal-item"><div class="dot" style="background:var(--green);"></div>1 vaso de jugo de naranja o uva (carbos rápidos)</div>
+  </div>
+</div>
+
+<!-- MERIENDA -->
+<div class="meal-card">
+  <div class="meal-header">
+    <div class="time">🕖 19:00 — Merienda</div>
+    <div class="meal-name">Batido · ~700–750 kcal · ~35 g proteína</div>
+  </div>
+  <div class="meal-items">
+    <div class="meal-item"><div class="dot"></div>500 ml leche entera</div>
+    <div class="meal-item"><div class="dot"></div>80 g harina de avena</div>
+    <div class="meal-item"><div class="dot"></div>1 banana</div>
+    <div class="meal-item"><div class="dot"></div>30 g mantequilla de maní</div>
+  </div>
+</div>
+
+<!-- CENA -->
+<div class="meal-card">
+  <div class="meal-header" style="background: var(--red-dark);">
+    <div class="time">🕤 21:30 — Cena</div>
+    <div class="meal-name">En el gimnasio · Comida sólida completa · ~850–900 kcal · ~55 g proteína</div>
+  </div>
+  <div class="meal-items">
+    <div class="meal-item"><div class="dot" style="background:var(--red-dark);"></div>250 g carne roja o pollo</div>
+    <div class="meal-item"><div class="dot" style="background:var(--red-dark);"></div>300–350 g arroz, pasta o puré</div>
+    <div class="meal-item"><div class="dot" style="background:var(--red-dark);"></div>Verdura abundante: brócoli, lechuga, zanahoria o tomate</div>
+    <div class="meal-item"><div class="dot" style="background:var(--red-dark);"></div>Si faltan calorías: 2–4 rebanadas de pan</div>
+  </div>
+</div>
+
+<!-- ANTES DE DORMIR -->
+<div class="meal-card">
+  <div class="meal-header" style="background: #2C3E50;">
+    <div class="time">🕛 00:00 — Antes de dormir</div>
+    <div class="meal-name">Snack nocturno · ~300–350 kcal · ~25 g proteína lenta</div>
+  </div>
+  <div class="meal-items">
+    <div class="meal-item"><div class="dot" style="background:#2C3E50;"></div>200 g yogur griego entero (proteína caseína — digestión lenta)</div>
+    <div class="meal-item"><div class="dot" style="background:#2C3E50;"></div>30 g mantequilla de maní</div>
+    <div class="meal-item"><div class="dot" style="background:#2C3E50;"></div>Opcional: 1 cucharada de miel</div>
+  </div>
+</div>
+
+<!-- DIAS DESCANSO -->
+<div class="rules-card">
+  <div class="rules-header" style="background:#607D8B;">🛋️ Días de descanso — Ajuste</div>
+  <ul>
+    <li>🍚 <span>Reducir carbos un 20–25%: menos arroz/pasta en pre y post-entreno (esas comidas ya no aplican)</span></li>
+    <li>💪 <span>Proteína igual o ligeramente mayor: el músculo sigue sintetizando proteína en el descanso</span></li>
+    <li>🥗 <span>Reemplazar pre/post-entreno por dos comidas normales de proteína + verdura + carbos moderados</span></li>
+    <li>🔥 <span>Target: ~3.400–3.600 kcal</span></li>
+  </ul>
+</div>
+
+<!-- SUPLEMENTOS -->
+<div class="rules-card">
+  <div class="rules-header">💊 Suplementos</div>
+  <ul>
+    <li>🟢 <span><strong>Creatina monohidrato:</strong> 5 g — en el batido del desayuno, todos los días (entreno o no)</span></li>
+    <li>☕ <span><strong>Cafeína:</strong> 100–200 mg — 30 min antes de entrenar, solo si la necesitás y no afecta el sueño</span></li>
+    <li>⚪ <span><strong>Proteína en polvo:</strong> solo si un día no llegás a los 180 g con comida real</span></li>
+  </ul>
+</div>
+
+<!-- REGLAS ALIMENTACIÓN -->
+<div class="rules-card">
+  <div class="rules-header">⚙️ Reglas y control de peso</div>
+  <ul>
+    <li>🍳 <span>Cocinar todo el domingo — llevá los táperes ya preparados</span></li>
+    <li>🥤 <span>Siempre tener avena, leche y mantequilla de maní para los batidos</span></li>
+    <li>⚖️ <span>Pesarte una vez por semana — en ayunas, mismo día (lunes), mismo horario</span></li>
+    <li>✅ <span>Si subís 250–500 g/semana → no cambiamos nada</span></li>
+    <li>📈 <span>Si 2 semanas seguidas sin subir → aumentamos 200–300 kcal/día (primero en carbos)</span></li>
+    <li>📉 <span>Si subís más de 600–700 g/semana durante 2 semanas → bajamos 200 kcal/día</span></li>
+    <li>💧 <span>3–4 litros de agua diarios — preferentemente entre comidas</span></li>
+  </ul>
+</div>
+
+<!-- COMPRA SEMANAL / QUINCENAL ALIMENTOS -->
+<style>
+.shop-table { width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
+.shop-table th { background:var(--accent); color:#fff; padding:8px 10px; text-align:left; font-weight:600; }
+.shop-table th:last-child, .shop-table td:last-child { text-align:right; }
+.shop-table th:nth-child(2), .shop-table td:nth-child(2) { text-align:right; }
+.shop-table td { padding:8px 10px; border-bottom:1px solid var(--border); }
+.shop-table tr:last-child td { border-bottom:none; }
+.shop-table tr:nth-child(even) td { background:rgba(0,0,0,0.02); }
+.shop-note { font-size:12px; color:var(--muted); margin-top:8px; padding:0 4px; }
+</style>
+<div class="shop-list">
+  <div class="shop-header">🛒 Lista de compras — Alimentos</div>
+  <table class="shop-table">
+    <thead>
+      <tr><th>Alimento</th><th>Semanal</th><th>Quincenal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🥚 Huevos</td><td>28 u</td><td>56 u</td></tr>
+      <tr><td>🍞 Pan de molde</td><td>28 rebanadas (~4 reb/día)</td><td>56 rebanadas</td></tr>
+      <tr><td>🍗 Pollo (pechuga/filete)</td><td>2,4 kg</td><td>4,8 kg</td></tr>
+      <tr><td>🥩 Carne picada magra / vacuna</td><td>2,1 kg</td><td>4,3 kg</td></tr>
+      <tr><td>🍚 Arroz (peso crudo)</td><td>2,7 kg</td><td>5,4 kg</td></tr>
+      <tr><td>🥛 Leche entera</td><td>7 litros</td><td>14 litros</td></tr>
+      <tr><td>🌾 Harina de avena</td><td>1.120 g (~1,1 kg)</td><td>2.240 g (~2,2 kg)</td></tr>
+      <tr><td>🍌 Bananas</td><td>14 u</td><td>28 u</td></tr>
+      <tr><td>🥜 Mantequilla de maní</td><td>665 g</td><td>1.330 g (~1,3 kg)</td></tr>
+      <tr><td>🍎 Manzanas o naranjas (pre-entreno)</td><td>7 u</td><td>14 u</td></tr>
+      <tr><td>🫙 Yogur griego entero</td><td>1.400 g (~7 potes x 200g)</td><td>2.800 g (~14 potes)</td></tr>
+      <tr><td>🥗 Verduras variadas (brócoli, tomate, zanahoria, lechuga)</td><td>1.750 g (~1,8 kg)</td><td>3.500 g (~3,5 kg)</td></tr>
+      <tr><td>🍊 Jugo de naranja o uva (post-entreno)</td><td>1,8 litros</td><td>3,5 litros</td></tr>
+      <tr><td>🫒 Aceite de oliva</td><td>~140 ml</td><td>~280 ml</td></tr>
+      <tr><td>🍯 Miel (opcional, noche)</td><td>~70 g</td><td>~140 g</td></tr>
+    </tbody>
+  </table>
+  <div class="shop-note">💊 Creatina monohidrato: 35 g/semana · 70 g/quincena (frasco 300 g ≈ 8–9 semanas; 500 g ≈ 14 semanas)</div>
+  <div class="shop-note">⚠️ Las cantidades son exactas según el plan. Comprá siempre con un 10–15% de margen por si algún día comés un poco más.</div>
+</div>
+
+<a class="back-top" href="#alimentacion">↑ Volver al índice</a>
+
+<!-- ==================== CICLO ==================== -->
+<a class="anchor" id="ciclo"></a>
+<div class="section-header">
+  <span class="emoji">💉</span>
+  <h2>Ciclo</h2>
+</div>
+
+<!-- RESUMEN CICLO -->
+<div class="rules-card">
+  <div class="rules-header">📋 Resumen del ciclo</div>
+  <ul>
+    <li>💉 <span><strong>Testosterona:</strong> 500 mg/semana — 250 mg lunes + 250 mg jueves (semanas 1–12)</span></li>
+    <li>🧬 <span><strong>HCG:</strong> 500 IU × 3 por semana — semanas 10, 11 y 12 (lun/mié/vie)</span></li>
+    <li>💊 <span><strong>Anastrozol:</strong> 0.25 mg cada 3–4 días desde semana 1 (preventivo) · subir a 0.5 mg si hay síntomas</span></li>
+    <li>⏳ <span><strong>Espera (sem. 13–14):</strong> Nada — clearance de testosterona enantato/cipionato</span></li>
+    <li>🔄 <span><strong>PCT:</strong> Semanas 15–18 · arranca exactamente 2 semanas después de la última inyección</span></li>
+  </ul>
+</div>
+
+<!-- SEMANAS 1-9 -->
+<div class="cycle-week">
+  <div class="cycle-week-header cycle-active">💉 Semanas 1–9 · Ciclo Activo</div>
+  <div class="cycle-day">
+    <div class="day-name">Lunes</div>
+    <div class="day-content">Testosterona Enantato/Cipionato: <strong>250 mg</strong> (inyección intramuscular)</div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Martes</div>
+    <div class="day-content nothing">Nada &nbsp;<span class="tag">o Anastrozol 0.25 mg (preventivo)</span></div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Miércoles</div>
+    <div class="day-content nothing">Nada</div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Jueves</div>
+    <div class="day-content">Testosterona Enantato/Cipionato: <strong>250 mg</strong> (inyección intramuscular)</div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Viernes</div>
+    <div class="day-content nothing">Nada &nbsp;<span class="tag">o Anastrozol 0.25 mg (preventivo)</span></div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Sábado</div>
+    <div class="day-content nothing">Nada</div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Domingo</div>
+    <div class="day-content nothing">Nada</div>
+  </div>
+  <div style="padding:10px 16px;font-size:12px;color:var(--muted);">
+    ⚠️ Anastrozol preventivo: 0.25 mg cada 3–4 días desde semana 1. Si aparecen síntomas (retención de agua, sensibilidad en pezones, hinchazón), subir a 0.5 mg. No esperar síntomas para arrancar.
+  </div>
+</div>
+
+<!-- SEMANAS 10-12 -->
+<div class="cycle-week">
+  <div class="cycle-week-header cycle-hcg">💉 Semanas 10–12 · Ciclo Activo + HCG</div>
+  <div class="cycle-day">
+    <div class="day-name">Lunes</div>
+    <div class="day-content">Testosterona: <strong>250 mg</strong> · HCG: <strong>500 IU</strong></div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Martes</div>
+    <div class="day-content nothing">Nada &nbsp;<span class="tag">o Anastrozol 0.25–0.5 mg</span></div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Miércoles</div>
+    <div class="day-content">HCG: <strong>500 IU</strong></div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Jueves</div>
+    <div class="day-content">Testosterona: <strong>250 mg</strong> · HCG: <strong>500 IU</strong></div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Viernes</div>
+    <div class="day-content nothing">Nada &nbsp;<span class="tag">o Anastrozol 0.25–0.5 mg</span></div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Sábado</div>
+    <div class="day-content nothing">Nada</div>
+  </div>
+  <div class="cycle-day">
+    <div class="day-name">Domingo</div>
+    <div class="day-content nothing">Nada</div>
+  </div>
+  <div style="padding:10px 16px;font-size:12px;color:var(--muted);">
+    ℹ️ HCG arranca semana 10 (no 11) para dar más tiempo al eje antes de la última inyección de testosterona. Mejor recuperación del eje HPG.
+  </div>
+</div>
+
+<!-- SEMANAS 13-14 -->
+<div class="cycle-week">
+  <div class="cycle-week-header cycle-wait">⏳ Semanas 13–14 · Espera / Clearance</div>
+  <div class="cycle-day">
+    <div class="day-name">Todos los días</div>
+    <div class="day-content nothing">Nada — el cuerpo elimina la testosterona antes de arrancar PCT</div>
+  </div>
+  <div style="padding:10px 16px;font-size:12px;color:var(--muted);">
+    ℹ️ Enantato y Cipionato tienen vida media de ~7–10 días. Con 2 semanas de espera el nivel baja lo suficiente para que la PCT sea efectiva.
+  </div>
+</div>
+
+<!-- PCT 15-16 -->
+<div class="cycle-week">
+  <div class="cycle-week-header cycle-pct1">🔄 Semanas 15–16 · PCT — Fase 1</div>
+  <div class="cycle-day">
+    <div class="day-name">Todos los días</div>
+    <div class="day-content">
+      Clomid: <strong>50 mg</strong><br>
+      Nolvadex: <strong>40 mg</strong><br>
+      <span style="font-size:12px;color:var(--muted);">Siempre a la misma hora (mañana o noche)</span>
+    </div>
+  </div>
+</div>
+
+<!-- PCT 17-18 -->
+<div class="cycle-week">
+  <div class="cycle-week-header cycle-pct2">🔄 Semanas 17–18 · PCT — Fase 2</div>
+  <div class="cycle-day">
+    <div class="day-name">Todos los días</div>
+    <div class="day-content">
+      Clomid: <strong>25–50 mg</strong> (según cómo te sientas)<br>
+      Nolvadex: <strong>20 mg</strong>
+    </div>
+  </div>
+  <div style="padding:10px 16px;font-size:12px;color:var(--muted);">
+    ✅ Si a la semana 17 te sentís bien (libido, energía, estado anímico estables) → 25 mg Clomid. Si notás bajón → 50 mg.
+  </div>
+</div>
+
+<!-- COMPRAS CICLO -->
+<a class="anchor" id="compras-ciclo"></a>
+<div class="shop-list">
+  <div class="shop-header">🛒 Lista de compras — Ciclo</div>
+  <ul>
+    <li>💉 <span><strong>Testosterona Enantato o Cipionato:</strong> 6.500 mg total (~2 viales 10 ml a 250 mg/ml)</span></li>
+    <li>🧬 <span><strong>HCG:</strong> 13.500 IU total — 3 semanas × 3 veces × 500 IU (1–2 viales estándar de 5.000–10.000 IU)</span></li>
+    <li>💊 <span><strong>Anastrozol (Arimidex):</strong> 30–40 tabletas de 1 mg (uso preventivo desde sem. 1, cortadas al medio)</span></li>
+    <li>💊 <span><strong>Clomid (Clomifeno):</strong> 65–70 tabletas de 50 mg</span></li>
+    <li>💊 <span><strong>Nolvadex (Tamoxifeno):</strong> 85–90 tabletas de 20 mg</span></li>
+  </ul>
+</div>
+
+<!-- LÍNEA DE TIEMPO -->
+<a class="anchor" id="timeline"></a>
+<div class="section-header">
+  <span class="emoji">📅</span>
+  <h2>Línea de tiempo</h2>
+</div>
+
+<div class="timeline">
+  <div class="tl-header">📅 Cronograma completo</div>
+  <div class="tl-item">
+    <div class="tl-date">28 Jul 2026</div>
+    <div class="tl-desc">Arrancás a entrenar y comer bien — pre-ciclo</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">10 Ago 2026</div>
+    <div class="tl-desc">Primera inyección — Semana 1 del ciclo</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">~Sep 2026</div>
+    <div class="tl-desc">Semanas 3-4: empezás a notar el efecto real</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">~Oct 2026</div>
+    <div class="tl-desc">Semanas 8-9: pico anabólico</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">~2 Nov 2026</div>
+    <div class="tl-desc">Semana 12: última inyección — peso máximo (~90-95 kg)</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">~16 Nov 2026</div>
+    <div class="tl-desc">Semanas 13-14: espera / clearance — nada</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">~30 Nov 2026</div>
+    <div class="tl-desc">Semana 15: arranca PCT</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">~28 Dic 2026</div>
+    <div class="tl-desc">Semana 18: fin de PCT</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">~Ene 2027</div>
+    <div class="tl-desc">Peso estabilizado real (~82-86 kg)</div>
+  </div>
+</div>
+
+<a class="back-top" href="#entrenamiento">↑ Volver al inicio</a>
+
+<div class="spacer"></div>
+
+</body>
+</html>
