@@ -186,6 +186,15 @@
     .tag.orange { background: var(--orange-light); color: var(--orange); }
 
     /* NOTA AL PIE DE CARD */
+    /* DÍAS NAV */
+    .days-nav { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 20px 0; }
+    .day-pill { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:700; font-size:14px; color:#fff; flex:1; min-width:120px; text-align:center; line-height:1.3; transition:opacity .15s; }
+    .day-pill:hover { opacity:.85; }
+    .day-pill span { font-size:11px; font-weight:400; opacity:.85; margin-top:2px; }
+    .day-pill.blue { background:#3b6fc9; }
+    .day-pill.red { background:#c94040; }
+    .day-pill.green { background:#2e9e5b; }
+
     .card-note {
       background: var(--gray);
       padding: 10px 14px;
@@ -420,7 +429,17 @@
   <h2>Entrenamiento</h2>
 </div>
 
+<!-- ÍNDICE DE DÍAS -->
+<div class="days-nav">
+  <a href="#dia-lunes" class="day-pill blue">🔵 Lunes<span>Cuádriceps</span></a>
+  <a href="#dia-martes" class="day-pill red">🔴 Martes<span>Pecho · Hombro</span></a>
+  <a href="#dia-miercoles" class="day-pill green">🟢 Miércoles<span>Femoral · Glúteo</span></a>
+  <a href="#dia-viernes" class="day-pill blue">🔵 Viernes<span>Espalda · Bíceps</span></a>
+  <a href="#dia-sabado" class="day-pill green">🟢 Sábado<span>Metabólico</span></a>
+</div>
+
 <!-- LUNES -->
+<a class="anchor" id="dia-lunes"></a>
 <div class="card day-blue">
   <div class="card-header">
     <div>
@@ -491,6 +510,7 @@
 </div>
 
 <!-- MARTES -->
+<a class="anchor" id="dia-martes"></a>
 <div class="card day-red">
   <div class="card-header">
     <div>
@@ -568,6 +588,7 @@
 </div>
 
 <!-- MIÉRCOLES -->
+<a class="anchor" id="dia-miercoles"></a>
 <div class="card day-green">
   <div class="card-header">
     <div>
@@ -637,6 +658,7 @@
 </div>
 
 <!-- VIERNES -->
+<a class="anchor" id="dia-viernes"></a>
 <div class="card day-blue">
   <div class="card-header">
     <div>
@@ -702,6 +724,7 @@
 </div>
 
 <!-- SÁBADO -->
+<a class="anchor" id="dia-sabado"></a>
 <div class="card day-green">
   <div class="card-header">
     <div>
