@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELESFIT - Seguimiento PRO</title>
+    <title>ELESFIT - Seguimiento FULL</title>
     <style>
         :root {
             --dark-bg: #121212; --card-bg: #1e1e1e; --text-main: #ffffff;
@@ -53,14 +53,21 @@
         </section>
 
         <section class="track-section sec-weekly">
-            <h2>📅 Check-in (Fotos y Medidas)</h2>
+            <h2>📅 Antropometría & Check-in</h2>
             <div class="form-grid">
-                <div class="input-group"><label>Peso (kg)</label><input type="number" step="0.1" id="w-p"></div>
+                <div class="input-group"><label>Peso Corporal</label><input type="number" step="0.1" id="w-p"></div>
                 <div class="input-group"><label>Cintura (cm)</label><input type="number" id="w-c"></div>
-                <div class="input-group full-width"><label>Fotos (Links)</label><input type="text" id="w-f"></div>
-                <div class="input-group full-width"><label>Foto Directa</label><input type="file" id="w-file" accept="image/*"></div>
+                <div class="input-group"><label>Cuello (cm)</label><input type="number" id="w-cue"></div>
+                <div class="input-group"><label>Pecho (cm)</label><input type="number" id="w-pech"></div>
+                <div class="input-group"><label>Brazo (Der)</label><input type="number" id="w-br-d"></div>
+                <div class="input-group"><label>Brazo (Izq)</label><input type="number" id="w-br-i"></div>
+                <div class="input-group"><label>Muslo (Der)</label><input type="number" id="w-mu-d"></div>
+                <div class="input-group"><label>Muslo (Izq)</label><input type="number" id="w-mu-i"></div>
+                <div class="input-group"><label>Gemelo (Der)</label><input type="number" id="w-ge-d"></div>
+                <div class="input-group"><label>Gemelo (Izq)</label><input type="number" id="w-ge-i"></div>
+                <div class="input-group full-width"><label>Foto (Link o archivo)</label><input type="file" id="w-file" accept="image/*"></div>
             </div>
-            <button class="btn-blue" onclick="save('week')">GUARDAR CHECK-IN</button>
+            <button class="btn-blue" onclick="save('week')">GUARDAR MEDIDAS</button>
         </section>
 
         <div id="history" class="history-list"></div>
@@ -80,8 +87,11 @@
                 if(!l.title||!p||!r)return alert('Faltan datos');
                 l.data=`${p}kg x ${r}`; l.wVal=p; fin(l);
             } else {
-                l.title="Check-in"; l.data=`Peso: ${document.getElementById('w-p').value}kg | Cint: ${document.getElementById('w-c').value}cm`;
-                l.note=`Fotos: ${document.getElementById('w-f').value}`;
+                l.title="Check-in Antropometría"; 
+                const pBody = document.getElementById('w-p').value;
+                const cintura = document.getElementById('w-c').value;
+                l.data=`Peso: ${pBody}kg | Cint: ${cintura}cm`;
+                l.note=`Brazos: ${document.getElementById('w-br-d').value}/${document.getElementById('w-br-i').value} | Muslos: ${document.getElementById('w-mu-d').value}/${document.getElementById('w-mu-i').value} | Gemelos: ${document.getElementById('w-ge-d').value}/${document.getElementById('w-ge-i').value}`;
                 let fi=document.getElementById('w-file'); if(fi.files[0]){let rd=new FileReader(); rd.onload=(e)=>{l.img=e.target.result;fin(l);};rd.readAsDataURL(fi.files[0]);}else{fin(l);}
             }
         }
