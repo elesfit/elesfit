@@ -27,27 +27,30 @@
   <link rel="apple-touch-icon" href="__ZAPIA_SITE_URL__/apple-touch-icon.png">
   <style>
     :root {
-      --red: #C0392B;
-      --red-dark: #96281B;
-      --red-light: #F9EBEA;
-      --blue: #2471A3;
-      --blue-light: #EBF5FB;
-      --green: #1E8449;
-      --green-light: #EAFAF1;
-      --orange: #D35400;
-      --orange-light: #FDF2E9;
-      --gray: #F4F6F7;
-      --text: #1C2833;
-      --muted: #7F8C8D;
-      --border: #E5E8E8;
-      --white: #FFFFFF;
+      --red: #E53935;
+      --red-dark: #B71C1C;
+      --red-light: rgba(229,57,53,0.15);
+      --blue: #2196F3;
+      --blue-light: rgba(33,150,243,0.15);
+      --green: #43A047;
+      --green-light: rgba(67,160,71,0.15);
+      --orange: #FB8C00;
+      --orange-light: rgba(251,140,0,0.15);
+      --bg: #121212;
+      --bg-card: #1E1E1E;
+      --bg-section: #181818;
+      --gray: #2A2A2A;
+      --text: #F0F0F0;
+      --muted: #9E9E9E;
+      --border: #2E2E2E;
+      --white: #1E1E1E;
       --radius: 14px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --shadow: 0 2px 16px rgba(0,0,0,0.4);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #F0F2F5;
+      background: var(--bg);
       color: var(--text);
       font-size: 15px;
       line-height: 1.6;
@@ -104,6 +107,10 @@
     .index-nav a:active { background: var(--gray); }
     .index-nav .icon { font-size: 20px; width: 28px; text-align: center; }
     .index-nav .arrow { margin-left: auto; color: var(--muted); }
+    .index-group-label { padding:8px 18px; font-size:11px; font-weight:900; letter-spacing:2px; border-left:3px solid; }
+    .index-group-label.blue { background:var(--blue-light); color:var(--blue); border-color:var(--blue); }
+    .index-group-label.green { background:var(--green-light); color:var(--green); border-color:var(--green); }
+    .index-group-label.red { background:var(--red-light); color:var(--red); border-color:var(--red); }
 
     /* SECTION HEADERS */
     .section-header {
@@ -166,7 +173,7 @@
       vertical-align: top;
     }
     .exercise-table tr:last-child td { border-bottom: none; }
-    .exercise-table tr:nth-child(even) { background: #FAFAFA; }
+    .exercise-table tr:nth-child(even) { background: rgba(255,255,255,0.04); }
 
     .ex-name { font-weight: 700; color: var(--text); }
     .ex-reps { color: var(--blue); font-weight: 600; }
@@ -186,6 +193,17 @@
     .tag.orange { background: var(--orange-light); color: var(--orange); }
 
     /* NOTA AL PIE DE CARD */
+    /* SEPARADORES DE BLOQUE */
+    .block-divider { display:flex; align-items:center; gap:12px; padding:28px 16px 8px; }
+    .block-divider-line { flex:1; height:2px; border-radius:2px; }
+    .block-divider-label { font-size:13px; font-weight:900; letter-spacing:3px; white-space:nowrap; padding:6px 16px; border-radius:20px; }
+    .block-divider.blue .block-divider-line { background:linear-gradient(90deg, transparent, var(--blue), transparent); }
+    .block-divider.blue .block-divider-label { background:var(--blue-light); color:var(--blue); border:1px solid var(--blue); }
+    .block-divider.green .block-divider-line { background:linear-gradient(90deg, transparent, var(--green), transparent); }
+    .block-divider.green .block-divider-label { background:var(--green-light); color:var(--green); border:1px solid var(--green); }
+    .block-divider.red .block-divider-line { background:linear-gradient(90deg, transparent, var(--red), transparent); }
+    .block-divider.red .block-divider-label { background:var(--red-light); color:var(--red); border:1px solid var(--red); }
+
     /* PROYECCIÓN */
     .proj-table { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
     .proj-row { display:flex; align-items:center; gap:10px; }
@@ -413,22 +431,38 @@
 <!-- ÍNDICE -->
 <div class="index-nav">
   <h2>📋 Índice</h2>
+
+  <div class="index-group-label blue">🏋️ Entrenamiento</div>
   <a href="#entrenamiento">
-    <span class="icon">🏋️</span> Entrenamiento
+    <span class="icon">📅</span> Rutina semanal
     <span class="arrow">›</span>
   </a>
+
+  <div class="index-group-label green">🍽️ Alimentación</div>
   <a href="#alimentacion">
-    <span class="icon">🍽️</span> Alimentación
-    <span class="arrow">›</span>
-  </a>
-  <a href="#ciclo">
-    <span class="icon">💉</span> Ciclo
+    <span class="icon">🥗</span> Plan de comidas
     <span class="arrow">›</span>
   </a>
   <a href="#compras-alimentos">
     <span class="icon">🛒</span> Lista de compras
     <span class="arrow">›</span>
   </a>
+  <a href="#superavit">
+    <span class="icon">📊</span> Manejo del superávit
+    <span class="arrow">›</span>
+  </a>
+
+  <div class="index-group-label red">💉 Ciclo</div>
+  <a href="#ciclo">
+    <span class="icon">💊</span> Protocolo del ciclo
+    <span class="arrow">›</span>
+  </a>
+  <a href="#compras-ciclo">
+    <span class="icon">🛒</span> Compras del ciclo
+    <span class="arrow">›</span>
+  </a>
+
+  <div class="index-group-label" style="background:rgba(255,193,7,0.12);color:#FFC107;border-left:3px solid #FFC107;">📈 Seguimiento</div>
   <a href="#timeline">
     <span class="icon">📅</span> Línea de tiempo
     <span class="arrow">›</span>
@@ -437,13 +471,14 @@
     <span class="icon">📈</span> Proyección de peso
     <span class="arrow">›</span>
   </a>
-  <a href="#superavit">
-    <span class="icon">🍽️</span> Manejo del superávit
-    <span class="arrow">›</span>
-  </a>
 </div>
 
 <!-- ==================== ENTRENAMIENTO ==================== -->
+<div class="block-divider blue">
+  <div class="block-divider-line"></div>
+  <div class="block-divider-label">🏋️ ENTRENAMIENTO</div>
+  <div class="block-divider-line"></div>
+</div>
 <a class="anchor" id="entrenamiento"></a>
 <div class="section-header">
   <span class="emoji">🏋️</span>
@@ -832,6 +867,11 @@
 <a class="back-top" href="#entrenamiento">↑ Volver al índice</a>
 
 <!-- ==================== ALIMENTACIÓN ==================== -->
+<div class="block-divider green">
+  <div class="block-divider-line"></div>
+  <div class="block-divider-label">🍽️ ALIMENTACIÓN</div>
+  <div class="block-divider-line"></div>
+</div>
 <a class="anchor" id="alimentacion"></a>
 <div class="section-header">
   <span class="emoji">🍽️</span>
@@ -1027,6 +1067,11 @@
 <a class="back-top" href="#alimentacion">↑ Volver al índice</a>
 
 <!-- ==================== CICLO ==================== -->
+<div class="block-divider red">
+  <div class="block-divider-line"></div>
+  <div class="block-divider-label">💉 CICLO</div>
+  <div class="block-divider-line"></div>
+</div>
 <a class="anchor" id="ciclo"></a>
 <div class="section-header">
   <span class="emoji">💉</span>
