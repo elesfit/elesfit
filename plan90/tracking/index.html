@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELESFIT - Seguimiento</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .track-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 5px solid var(--red-dark); }
+        .track-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
+        .input-group { display: flex; flex-direction: column; }
+        label { font-size: 0.85rem; font-weight: bold; color: #555; margin-bottom: 5px; }
+        input, textarea, select { padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; }
+        .btn-save { background: var(--red-dark); color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; font-weight: bold; margin-top: 15px; cursor: pointer; }
+        .history-item { font-size: 0.9rem; padding: 10px; border-bottom: 1px solid #eee; }
+        .tab-nav { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px; }
+        .tab-btn { background: #eee; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
+        .tab-btn.active { background: var(--red-dark); color: white; }
+        .status-msg { font-size: 0.8rem; text-align: center; margin-top: 10px; color: #666; }
+    </style>
+</head>
+<body class="bg-light">
+    <header class="header">
+        <div class="container">
+            <h1>📊 SEGUIMIENTO</h1>
+            <p>ELESFIT · Rumbo a los 90kg</p>
+            <a href="../index.html" style="color:white; text-decoration:none; font-size:0.9rem;">← Volver al Plan</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="showTab('entrenamiento')">Entrenamiento</button>
+            <button class="tab-btn" onclick="showTab('semanal')">Semanal</button>
+            <button class="tab-btn" onclick="showTab('mensual')">Mensual</button>
+        </div>
+
+        <!-- TRACKING ENTRENAMIENTO -->
+        <div id="entrenamiento" class="tab-content">
+            <div class="track-card">
+                <h3>Registro de Sesión</h3>
+                <div class="input-group">
+                    <label>Ejercicio / Día</label>
+                    <input type="text" id="ex-name" placeholder="Ej: Hack Squat o Día Martes">
+                </div>
+                <div class="track-grid">
+                    <div class="input-group">
+                        <label>Peso (kg)</label>
+                        <input type="number" id="ex-weight" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Reps</label>
+                        <input type="number" id="ex-reps" placeholder="0">
+                    </div>
+                </div>
+                <div class="input-group" style="margin-top:10px;">
+                    <label>Comentarios / Sensaciones</label>
+                    <textarea id="ex-notes" rows="2" placeholder="Ej: Excelente bombeo, dolor de codo..."></textarea>
+                </div>
+                <button class="btn-save" onclick="saveData('training')">Guardar Entrenamiento</button>
+                <div id="msg-training" class="status-msg"></div>
+            </div>
+        </div>
+
+        <!-- TRACKING SEMANAL -->
+        <div id="semanal" class="tab-content" style="display:none;">
+            <div class="track-card" style="border-left-color: var(--blue-dark);">
+                <h3>Reporte Semanal</h3>
+                <div class="track-grid">
+                    <div class="input-group">
+                        <label>Peso Ayunas (kg)</label>
+                        <input type="number" id="w-weight" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label>Promedio Semanal (kg)</label>
+                        <input type="number" id="w-avg" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label>Pasos Diarios (Promedio)</label>
+                        <input type="number" id="w-steps">
+                    </div>
+                    <div class="input-group">
+                        <label>Sueño (Hrs promedio)</label>
+                        <input type="number" id="w-sleep" step="0.5">
+                    </div>
+                </div>
+                <div class="track-grid" style="margin-top:10px;">
+                    <div class="input-group">
+                        <label>Cintura (cm)</label>
+                        <input type="number" id="w-waist" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label>Brazo (cm)</label>
+                        <input type="number" id="w-arm" step="0.1">
+                    </div>
+                </div>
+                <button class="btn-save" style="background: var(--blue-dark);" onclick="saveData('weekly')">Guardar Reporte Semanal</button>
+                <div id="msg-weekly" class="status-msg"></div>
+            </div>
+        </div>
+
+        <!-- TRACKING MENSUAL -->
+        <div id="mensual" class="tab-content" style="display:none;">
+            <div class="track-card" style="border-left-color: #222;">
+                <h3>Cierre de Mes</h3>
+                <div class="input-group">
+                    <label>Evolución Visual / Fotos</label>
+                    <textarea id="m-visual" rows="2" placeholder="Ej: Más densidad en hombros..."></textarea>
+                </div>
+                <div class="input-group" style="margin-top:10px;">
+                    <label>Decisión Nutricional</label>
+                    <select id="m-decision">
+                        <option value="mantener">Mantener Calorías</option>
+                        <option value="subir">Subir Calorías (Superávit)</option>
+                        <option value="bajar">Bajar Calorías (Ajuste)</option>
+                    </select>
+                </div>
+                <button class="btn-save" style="background: #222;" onclick="saveData('monthly')">Guardar Cierre Mensual</button>
+                <div id="msg-monthly" class="status-msg"></div>
+            </div>
+        </div>
+
+        <div class="track-card">
+            <h3>Últimos Registros</h3>
+            <div id="history-log">
+                <p style="color:#999; font-size:0.8rem;">Los datos se guardan en este navegador.</p>
+            </div>
+            <button onclick="clearLogs()" style="background:none; border:none; color:red; font-size:0.7rem; margin-top:10px; cursor:pointer;">Limpiar Historial</button>
+        </div>
+    </main>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).style.display = 'block';
+            event.currentTarget.classList.add('active');
+        }
+
+        function saveData(type) {
+            const date = new Date().toLocaleDateString();
+            let entry = { date, type };
+            
+            if(type === 'training') {
+                entry.name = document.getElementById('ex-name').value;
+                entry.weight = document.getElementById('ex-weight').value;
+                entry.reps = document.getElementById('ex-reps').value;
+                entry.notes = document.getElementById('ex-notes').value;
+            } else if(type === 'weekly') {
+                entry.weight = document.getElementById('w-weight').value;
+                entry.avg = document.getElementById('w-avg').value;
+            } else if(type === 'monthly') {
+                entry.decision = document.getElementById('m-decision').value;
+            }
+
+            let history = JSON.parse(localStorage.getItem('elesfit_logs') || '[]');
+            history.unshift(entry);
+            localStorage.setItem('elesfit_logs', JSON.stringify(history.slice(0, 50)));
+            
+            document.getElementById(`msg-${type}`).innerText = "✅ Guardado correctamente";
+            loadHistory();
+        }
+
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('elesfit_logs') || '[]');
+            const log = document.getElementById('history-log');
+            if(history.length === 0) return;
+            
+            log.innerHTML = history.map(h => `
+                <div class="history-item">
+                    <strong>${h.date} [${h.type.toUpperCase()}]</strong><br>
+                    ${h.name ? h.name + ': ' : ''} ${h.weight ? h.weight + 'kg' : ''} ${h.reps ? 'x' + h.reps : ''}
+                    ${h.decision ? 'Decisión: ' + h.decision : ''}
+                </div>
+            `).join('');
+        }
+
+        function clearLogs() {
+            if(confirm('¿Borrar todo el historial?')) {
+                localStorage.removeItem('elesfit_logs');
+                location.reload();
+            }
+        }
+
+        window.onload = loadHistory;
+    </script>
+</body>
+</html>
