@@ -201,6 +201,11 @@
                     <label>Fotos (Links)</label>
                     <input type="text" id="w-fotos" placeholder="Ej: Link a Google Drive o iCloud">
                 </div>
+                <div class="input-group full-width">
+                    <label>Subir Foto Local (Opcional)</label>
+                    <input type="file" id="w-file" accept="image/*" style="background: transparent; border: none; padding: 0;">
+                    <p style="font-size: 10px; color: var(--accent-red); margin-top: 5px;">⚠️ Nota: Las imágenes cargadas directamente consumen memoria de tu navegador.</p>
+                </div>
             </div>
             <button class="btn-blue" onclick="saveLog('week')">GUARDAR SEMANA</button>
         </section>
@@ -245,27 +250,43 @@
                 log.data = `${document.getElementById('t-peso').value}kg x ${document.getElementById('t-reps').value} (${document.getElementById('t-progreso').value})`;
                 log.note = document.getElementById('t-nota').value;
                 if(!log.title) return alert('Escribe el ejercicio');
+                finalizeSave(log);
             } else if(type === 'week') {
                 log.title = "Check-in Semanal";
                 log.data = `Peso: ${document.getElementById('w-peso').value}kg | Sueño: ${document.getElementById('w-sueno').value}hs`;
                 log.note = `Hombros: ${document.getElementById('w-hombros').value}cm · Pecho: ${document.getElementById('w-pecho').value}cm · Cintura: ${document.getElementById('w-cintura').value}cm · Brazo: ${document.getElementById('w-brazo').value}cm · Muslo: ${document.getElementById('w-muslo').value}cm · Gemelo: ${document.getElementById('w-gemelo').value}cm · Cardio/Pasos: ${document.getElementById('w-cardio').value} · Fotos: ${document.getElementById('w-fotos').value}`;
+                
+                const fileInput = document.getElementById('w-file');
+                if (fileInput.files && fileInput.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        log.image = e.target.result; // Base64
+                        finalizeSave(log);
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                } else {
+                    finalizeSave(log);
+                }
             } else if(type === 'month') {
                 log.title = "Auditoría Mensual";
                 log.data = `Decisión: ${document.getElementById('m-decision').value}`;
                 log.note = document.getElementById('m-resumen').value;
+                finalizeSave(log);
             }
+        }
 
+        function finalizeSave(log) {
             let logs = JSON.parse(localStorage.getItem('elesfit_logs') || '[]');
             logs.unshift(log);
-            localStorage.setItem('elesfit_logs', JSON.stringify(logs));
+            try {
+                localStorage.setItem('elesfit_logs', JSON.stringify(logs));
+            } catch (e) {
+                alert('La memoria del navegador está llena (demasiadas fotos). Intenta usar links para fotos antiguas.');
+            }
             
             // Limpiar inputs
-            if(type === 'train') {
-                document.getElementById('t-ejercicio').value = '';
-                document.getElementById('t-peso').value = '';
-                document.getElementById('t-reps').value = '';
-                document.getElementById('t-nota').value = '';
-            }
+            const inputs = document.querySelectorAll('input, textarea, select');
+            inputs.forEach(i => { if(i.type !== 'button') i.value = ''; });
 
             loadHistory();
         }
@@ -282,6 +303,7 @@
                     </div>
                     <div style="color: white; margin-bottom: 5px;">${l.data}</div>
                     <div style="color: var(--text-dim); font-style: italic;">${l.note}</div>
+                    ${l.image ? `<img src="${l.image}" style="width: 100%; border-radius: 8px; margin-top: 10px; border: 1px solid #333;">` : ''}
                     <div style="font-size: 10px; color: #444; margin-top: 10px;">${l.date}</div>
                 </div>
             `).join('');
