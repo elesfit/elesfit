@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGBOOK - PLAN 90</title>
+    <style>
+        :root { --bg: #000; --card: #111; --acc: #ff3e3e; --txt: #fff; --txt-dim: #888; --gold: #ffd700; }
+        body { background: var(--bg); color: var(--txt); font-family: -apple-system, sans-serif; margin: 0; padding: 15px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .card { background: var(--card); border-radius: 12px; padding: 20px; border: 1px solid #222; margin-bottom: 20px; }
+        h2 { color: var(--acc); margin: 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        label { display: block; color: var(--txt-dim); font-size: 10px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; margin-top: 15px; }
+        select, input { width: 100%; background: #222; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        button { width: 100%; padding: 15px; background: var(--acc); color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 20px; }
+        .history-section { margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; }
+        .log-item { background: #0a0a0a; border-left: 3px solid var(--acc); padding: 15px; margin-bottom: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #1a1a1a; }
+        .log-date { font-size: 10px; color: var(--txt-dim); margin-bottom: 4px; }
+        .log-best { color: var(--gold); font-size: 9px; font-weight: bold; display: block; margin-top: 4px; border: 1px solid var(--gold); padding: 2px 5px; border-radius: 3px; width: fit-content; }
+        .back-link { color: var(--txt-dim); text-decoration: none; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="header"><a href="../index.html" class="back-link">← VOLVER</a><h2>LOGBOOK PRO</h2></div>
+    <div class="card">
+        <label>Grupo Muscular</label>
+        <select id="group" onchange="loadEx()"><option value="">Seleccionar...</option></select>
+        <label>Ejercicio</label>
+        <select id="ex" onchange="showHistory()"><option value="">Elige grupo...</option></select>
+        <div class="grid-2">
+            <div><label>Peso (kg)</label><input type="number" id="w" step="0.5" placeholder="0"></div>
+            <div><label>Reps</label><input type="number" id="r" placeholder="0"></div>
+        </div>
+        <label>Intensidad</label>
+        <select id="rir"><option>RIR 0</option><option>RIR 1</option><option>RIR 2</option><option>Rest-Pause</option><option>Dropset</option></select>
+        <button onclick="save()">REGISTRAR SERIE</button>
+    </div>
+    <div class="history-section"><div id="h"></div></div>
+    <script src="../../app/tracking/exercises_db.js"></script>
+    <script>
+        const gs = document.getElementById('group'); const es = document.getElementById('ex'); const hDiv = document.getElementById('h');
+        let logs = JSON.parse(localStorage.getItem('plan90_logs')) || [];
+        if(typeof EXERCISES_DB !== 'undefined') { Object.keys(EXERCISES_DB).forEach(g => { let o = document.createElement('option'); o.value = g; o.innerText = g; gs.appendChild(o); }); }
+        function loadEx() { const g = gs.value; es.innerHTML = '<option value="">Seleccionar ejercicio...</option>'; if(g) EXERCISES_DB[g].forEach(e => { let o = document.createElement('option'); o.value = e; o.innerText = e; es.appendChild(o); }); showHistory(); }
+        function save() {
+            const e = es.value; const w = parseFloat(document.getElementById('w').value); const r = parseInt(document.getElementById('r').value); const ri = document.getElementById('rir').value;
+            if(!e || !w || !r) return alert("Faltan datos");
+            const newLog = { id: Date.now(), date: new Date().toLocaleDateString('es-AR', {day:'2-digit', month:'2-digit'}), ex: e, w: w, r: r, rir: ri };
+            logs.push(newLog); localStorage.setItem('plan90_logs', JSON.stringify(logs)); document.getElementById('w').value = ''; document.getElementById('r').value = ''; showHistory();
+        }
+        function showHistory() {
+            const currentEx = es.value; if(!currentEx) { hDiv.innerHTML = '<p style="color:#444; font-size:12px; text-align:center;">Selecciona un ejercicio para ver tu evolución</p>'; return; }
+            const filtered = logs.filter(l => l.ex === currentEx).reverse(); const best = filtered.length > 0 ? Math.max(...filtered.map(l => l.w)) : 0;
+            let html = ''; filtered.forEach(l => { const isBest = l.w === best ? '<span class="log-best">★ RÉCORD</span>' : ''; html += `<div class="log-item"><div><div class="log-date">${l.date}</div><strong>${l.w}kg x ${l.r}</strong> <span style="color:#666; font-size:11px;">(${l.rir})</span>${isBest}</div></div>`; });
+            hDiv.innerHTML = html || '<p style="color:#444; font-size:12px; text-align:center;">No hay registros previos.</p>';
+        }
+        showHistory();
+    </script>
+</body>
+</html>
