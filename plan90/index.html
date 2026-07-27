@@ -208,7 +208,9 @@
     .fechas-exactas { margin:8px 16px 12px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px; padding:10px 12px; }
     .fechas-title { font-size:11px; font-weight:700; color:var(--muted); letter-spacing:0.5px; margin-bottom:6px; text-transform:uppercase; }
     .fechas-grid { display:flex; flex-wrap:wrap; gap:4px; }
-    .fechas-grid span { font-size:11px; color:var(--muted); background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:4px; padding:2px 7px; white-space:nowrap; }
+    .fechas-grid span { font-size:11px; color:var(--muted); background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:4px; padding:2px 7px; white-space:nowrap; cursor:pointer; user-select:none; transition: all 0.15s; }
+    .fechas-grid span.done { background:rgba(67,160,71,0.2); border-color:var(--green); color:var(--green); text-decoration:line-through; }
+    .fechas-grid span.done::before { content:'✓ '; }
 
     /* PROYECCIÓN */
     .proj-table { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
@@ -1174,23 +1176,23 @@
   <div class="fechas-exactas">
     <div class="fechas-title">📅 Fechas exactas — Testosterona 250mg IM</div>
     <div class="fechas-grid">
-      <span>Sem 1 · Lun 17/08</span><span>Sem 1 · Jue 20/08</span>
-      <span>Sem 2 · Lun 24/08</span><span>Sem 2 · Jue 27/08</span>
-      <span>Sem 3 · Lun 31/08</span><span>Sem 3 · Jue 03/09</span>
-      <span>Sem 4 · Lun 07/09</span><span>Sem 4 · Jue 10/09</span>
-      <span>Sem 5 · Lun 14/09</span><span>Sem 5 · Jue 17/09</span>
-      <span>Sem 6 · Lun 21/09</span><span>Sem 6 · Jue 24/09</span>
-      <span>Sem 7 · Lun 28/09</span><span>Sem 7 · Jue 01/10</span>
-      <span>Sem 8 · Lun 05/10</span><span>Sem 8 · Jue 08/10</span>
-      <span>Sem 9 · Lun 12/10</span><span>Sem 9 · Jue 15/10</span>
+      <span data-id="t-s1l">Sem 1 · Lun 17/08</span><span data-id="t-s1j">Sem 1 · Jue 20/08</span>
+      <span data-id="t-s2l">Sem 2 · Lun 24/08</span><span data-id="t-s2j">Sem 2 · Jue 27/08</span>
+      <span data-id="t-s3l">Sem 3 · Lun 31/08</span><span data-id="t-s3j">Sem 3 · Jue 03/09</span>
+      <span data-id="t-s4l">Sem 4 · Lun 07/09</span><span data-id="t-s4j">Sem 4 · Jue 10/09</span>
+      <span data-id="t-s5l">Sem 5 · Lun 14/09</span><span data-id="t-s5j">Sem 5 · Jue 17/09</span>
+      <span data-id="t-s6l">Sem 6 · Lun 21/09</span><span data-id="t-s6j">Sem 6 · Jue 24/09</span>
+      <span data-id="t-s7l">Sem 7 · Lun 28/09</span><span data-id="t-s7j">Sem 7 · Jue 01/10</span>
+      <span data-id="t-s8l">Sem 8 · Lun 05/10</span><span data-id="t-s8j">Sem 8 · Jue 08/10</span>
+      <span data-id="t-s9l">Sem 9 · Lun 12/10</span><span data-id="t-s9j">Sem 9 · Jue 15/10</span>
     </div>
     <div class="fechas-title" style="margin-top:8px;">💊 Anastrozol 0.25mg oral (desde sem 3, cada 4 días)</div>
     <div class="fechas-grid">
-      <span>31/08 (Lun)</span><span>04/09 (Vie)</span><span>08/09 (Mar)</span><span>12/09 (Sáb)</span>
-      <span>16/09 (Mié)</span><span>20/09 (Dom)</span><span>24/09 (Jue)</span><span>28/09 (Lun)</span>
-      <span>02/10 (Vie)</span><span>06/10 (Mar)</span><span>10/10 (Sáb)</span><span>14/10 (Mié)</span>
-      <span>18/10 (Dom)</span><span>22/10 (Jue)</span><span>26/10 (Lun)</span><span>30/10 (Vie)</span>
-      <span>03/11 (Mar)</span>
+      <span data-id="ai-1">31/08 (Lun)</span><span data-id="ai-2">04/09 (Vie)</span><span data-id="ai-3">08/09 (Mar)</span><span data-id="ai-4">12/09 (Sáb)</span>
+      <span data-id="ai-5">16/09 (Mié)</span><span data-id="ai-6">20/09 (Dom)</span><span data-id="ai-7">24/09 (Jue)</span><span data-id="ai-8">28/09 (Lun)</span>
+      <span data-id="ai-9">02/10 (Vie)</span><span data-id="ai-10">06/10 (Mar)</span><span data-id="ai-11">10/10 (Sáb)</span><span data-id="ai-12">14/10 (Mié)</span>
+      <span data-id="ai-13">18/10 (Dom)</span><span data-id="ai-14">22/10 (Jue)</span><span data-id="ai-15">26/10 (Lun)</span><span data-id="ai-16">30/10 (Vie)</span>
+      <span data-id="ai-17">03/11 (Mar)</span>
     </div>
   </div>
 </div>
@@ -1232,9 +1234,9 @@
   <div class="fechas-exactas">
     <div class="fechas-title">📅 Fechas exactas — Testosterona 250mg + HCG 500 IU</div>
     <div class="fechas-grid">
-      <span>Sem 10 · Lun 19/10 · Test+HCG</span><span>Sem 10 · Mié 21/10 · HCG</span><span>Sem 10 · Jue 22/10 · Test+HCG</span><span>Sem 10 · Vie 23/10 · HCG</span>
-      <span>Sem 11 · Lun 26/10 · Test+HCG</span><span>Sem 11 · Mié 28/10 · HCG</span><span>Sem 11 · Jue 29/10 · Test+HCG</span><span>Sem 11 · Vie 30/10 · HCG</span>
-      <span>Sem 12 · Lun 02/11 · Test+HCG</span><span>Sem 12 · Mié 04/11 · HCG</span><span>Sem 12 · Jue 05/11 · Test+HCG ⬅ última inyección</span><span>Sem 12 · Vie 06/11 · HCG</span>
+      <span data-id="th-1">Sem 10 · Lun 19/10 · Test+HCG</span><span data-id="hcg-1">Sem 10 · Mié 21/10 · HCG</span><span data-id="th-2">Sem 10 · Jue 22/10 · Test+HCG</span><span data-id="hcg-2">Sem 10 · Vie 23/10 · HCG</span>
+      <span data-id="th-3">Sem 11 · Lun 26/10 · Test+HCG</span><span data-id="hcg-3">Sem 11 · Mié 28/10 · HCG</span><span data-id="th-4">Sem 11 · Jue 29/10 · Test+HCG</span><span data-id="hcg-4">Sem 11 · Vie 30/10 · HCG</span>
+      <span data-id="th-5">Sem 12 · Lun 02/11 · Test+HCG</span><span data-id="hcg-5">Sem 12 · Mié 04/11 · HCG</span><span data-id="th-6">Sem 12 · Jue 05/11 · Test+HCG ⬅ última</span><span data-id="hcg-6">Sem 12 · Vie 06/11 · HCG</span>
     </div>
   </div>
 </div>
@@ -1271,8 +1273,8 @@
   <div class="fechas-exactas">
     <div class="fechas-title">📅 Fechas exactas — Clomid 50mg + Nolvadex 40mg · todos los días</div>
     <div class="fechas-grid">
-      <span>19/11</span><span>20/11</span><span>21/11</span><span>22/11</span><span>23/11</span><span>24/11</span><span>25/11</span>
-      <span>26/11</span><span>27/11</span><span>28/11</span><span>29/11</span><span>30/11</span><span>01/12</span><span>02/12</span>
+      <span data-id="pct1-1">19/11</span><span data-id="pct1-2">20/11</span><span data-id="pct1-3">21/11</span><span data-id="pct1-4">22/11</span><span data-id="pct1-5">23/11</span><span data-id="pct1-6">24/11</span><span data-id="pct1-7">25/11</span>
+      <span data-id="pct1-8">26/11</span><span data-id="pct1-9">27/11</span><span data-id="pct1-10">28/11</span><span data-id="pct1-11">29/11</span><span data-id="pct1-12">30/11</span><span data-id="pct1-13">01/12</span><span data-id="pct1-14">02/12</span>
     </div>
   </div>
 </div>
@@ -1293,8 +1295,8 @@
   <div class="fechas-exactas">
     <div class="fechas-title">📅 Fechas exactas — Clomid 25–50mg + Nolvadex 20mg · todos los días</div>
     <div class="fechas-grid">
-      <span>03/12</span><span>04/12</span><span>05/12</span><span>06/12</span><span>07/12</span><span>08/12</span><span>09/12</span>
-      <span>10/12</span><span>11/12</span><span>12/12</span><span>13/12</span><span>14/12</span><span>15/12</span><span>16/12 ⬅ fin PCT</span>
+      <span data-id="pct2-1">03/12</span><span data-id="pct2-2">04/12</span><span data-id="pct2-3">05/12</span><span data-id="pct2-4">06/12</span><span data-id="pct2-5">07/12</span><span data-id="pct2-6">08/12</span><span data-id="pct2-7">09/12</span>
+      <span data-id="pct2-8">10/12</span><span data-id="pct2-9">11/12</span><span data-id="pct2-10">12/12</span><span data-id="pct2-11">13/12</span><span data-id="pct2-12">14/12</span><span data-id="pct2-13">15/12</span><span data-id="pct2-14">16/12 ⬅ fin PCT</span>
     </div>
   </div>
 </div>
@@ -1502,5 +1504,35 @@
 
 <div class="spacer"></div>
 
+<script>
+  // Tildador de fechas — guarda en localStorage
+  const STORAGE_KEY = 'elesfit_ciclo_done';
+
+  function loadDone() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+  }
+  function saveDone(done) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(done));
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const done = loadDone();
+    document.querySelectorAll('.fechas-grid span[data-id]').forEach(function(el) {
+      const id = el.dataset.id;
+      if (done[id]) el.classList.add('done');
+      el.addEventListener('click', function() {
+        const d = loadDone();
+        if (d[id]) {
+          delete d[id];
+          el.classList.remove('done');
+        } else {
+          d[id] = true;
+          el.classList.add('done');
+        }
+        saveDone(d);
+      });
+    });
+  });
+</script>
 </body>
 </html>
