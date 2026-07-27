@@ -3,59 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGBOOK - PLAN 90</title>
+    <title>ELESFIT - Seguimiento PRO</title>
     <style>
-        :root { --bg: #000; --card: #111; --acc: #ff3e3e; --txt: #fff; --txt-dim: #888; --gold: #ffd700; }
-        body { background: var(--bg); color: var(--txt); font-family: -apple-system, sans-serif; margin: 0; padding: 15px; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .card { background: var(--card); border-radius: 12px; padding: 20px; border: 1px solid #222; margin-bottom: 20px; }
-        h2 { color: var(--acc); margin: 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
-        label { display: block; color: var(--txt-dim); font-size: 10px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; margin-top: 15px; }
-        select, input { width: 100%; background: #222; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        button { width: 100%; padding: 15px; background: var(--acc); color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 20px; }
-        .history-section { margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; }
-        .log-item { background: #0a0a0a; border-left: 3px solid var(--acc); padding: 15px; margin-bottom: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #1a1a1a; }
-        .log-date { font-size: 10px; color: var(--txt-dim); margin-bottom: 4px; }
-        .log-best { color: var(--gold); font-size: 9px; font-weight: bold; display: block; margin-top: 4px; border: 1px solid var(--gold); padding: 2px 5px; border-radius: 3px; width: fit-content; }
-        .back-link { color: var(--txt-dim); text-decoration: none; font-size: 12px; }
+        :root {
+            --dark-bg: #121212; --card-bg: #1e1e1e; --text-main: #ffffff;
+            --text-dim: #b0b0b0; --accent-red: #ff3e3e; --accent-blue: #3e94ff;
+            --accent-gold: #ffd700;
+        }
+        body { background-color: var(--dark-bg); color: var(--text-main); font-family: sans-serif; margin: 0; padding: 15px; padding-bottom: 50px; }
+        .container { max-width: 500px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 25px; }
+        .btn-back { color: var(--text-dim); text-decoration: none; font-size: 12px; }
+        h1 { color: var(--accent-red); margin: 5px 0; font-size: 24px; }
+        .track-section { background: var(--card-bg); border-radius: 12px; padding: 15px; margin-bottom: 20px; border-top: 3px solid #444; }
+        .sec-train { border-top-color: var(--accent-red); }
+        .sec-weekly { border-top-color: var(--accent-blue); }
+        h2 { font-size: 16px; margin-top: 0; color: #fff; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 4px; }
+        input, select, textarea { background: #2a2a2a; border: 1px solid #444; border-radius: 6px; padding: 8px; color: white; font-size: 14px; width: 100%; box-sizing: border-box; }
+        .full-width { grid-column: span 2; }
+        button { width: 100%; padding: 12px; border-radius: 6px; border: none; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; }
+        .btn-red { background: var(--accent-red); color: white; }
+        .btn-blue { background: var(--accent-blue); color: white; }
+        .history-list { margin-top: 30px; }
+        .log-item { background: #1a1a1a; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #222; }
+        .log-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; margin-bottom: 5px; }
+        .tag { font-size: 9px; padding: 2px 5px; border-radius: 3px; }
+        .tag-train { background: rgba(255,62,62,0.2); color: var(--accent-red); }
+        .tag-week { background: rgba(62,148,255,0.2); color: var(--accent-blue); }
+        .log-best { color: var(--accent-gold); font-size: 9px; border: 1px solid var(--accent-gold); padding: 1px 4px; border-radius: 2px; }
     </style>
 </head>
 <body>
-    <div class="header"><a href="../index.html" class="back-link">← VOLVER</a><h2>LOGBOOK PRO</h2></div>
-    <div class="card">
-        <label>Grupo Muscular</label>
-        <select id="group" onchange="loadEx()"><option value="">Seleccionar...</option></select>
-        <label>Ejercicio</label>
-        <select id="ex" onchange="showHistory()"><option value="">Elige grupo...</option></select>
-        <div class="grid-2">
-            <div><label>Peso (kg)</label><input type="number" id="w" step="0.5" placeholder="0"></div>
-            <div><label>Reps</label><input type="number" id="r" placeholder="0"></div>
-        </div>
-        <label>Intensidad</label>
-        <select id="rir"><option>RIR 0</option><option>RIR 1</option><option>RIR 2</option><option>Rest-Pause</option><option>Dropset</option></select>
-        <button onclick="save()">REGISTRAR SERIE</button>
+    <div class="container">
+        <a href="../index.html" class="btn-back">← Volver al Plan</a>
+        <header><h1>ELESFIT LOGBOOK</h1></header>
+
+        <section class="track-section sec-train">
+            <h2>🏋️ Entrenamiento & Fuerza</h2>
+            <div class="form-grid">
+                <div class="input-group full-width"><label>Grupo</label><select id="group" onchange="loadEx()"><option value="">Seleccionar...</option></select></div>
+                <div class="input-group full-width"><label>Ejercicio</label><select id="ex" onchange="updatePrev()"><option value="">Elegir...</option></select></div>
+                <div class="input-group"><label>Peso</label><input type="number" step="0.5" id="w"></div>
+                <div class="input-group"><label>Reps</label><input type="number" id="r"></div>
+            </div>
+            <button class="btn-red" onclick="save('train')">REGISTRAR SERIE</button>
+            <div id="prev" style="margin-top:10px; font-size:11px; color:var(--accent-red);"></div>
+        </section>
+
+        <section class="track-section sec-weekly">
+            <h2>📅 Check-in (Fotos y Medidas)</h2>
+            <div class="form-grid">
+                <div class="input-group"><label>Peso (kg)</label><input type="number" step="0.1" id="w-p"></div>
+                <div class="input-group"><label>Cintura (cm)</label><input type="number" id="w-c"></div>
+                <div class="input-group full-width"><label>Fotos (Links)</label><input type="text" id="w-f"></div>
+                <div class="input-group full-width"><label>Foto Directa</label><input type="file" id="w-file" accept="image/*"></div>
+            </div>
+            <button class="btn-blue" onclick="save('week')">GUARDAR CHECK-IN</button>
+        </section>
+
+        <div id="history" class="history-list"></div>
     </div>
-    <div class="history-section"><div id="h"></div></div>
+
     <script src="../../app/tracking/exercises_db.js"></script>
     <script>
-        const gs = document.getElementById('group'); const es = document.getElementById('ex'); const hDiv = document.getElementById('h');
-        let logs = JSON.parse(localStorage.getItem('plan90_logs')) || [];
-        if(typeof EXERCISES_DB !== 'undefined') { Object.keys(EXERCISES_DB).forEach(g => { let o = document.createElement('option'); o.value = g; o.innerText = g; gs.appendChild(o); }); }
-        function loadEx() { const g = gs.value; es.innerHTML = '<option value="">Seleccionar ejercicio...</option>'; if(g) EXERCISES_DB[g].forEach(e => { let o = document.createElement('option'); o.value = e; o.innerText = e; es.appendChild(o); }); showHistory(); }
-        function save() {
-            const e = es.value; const w = parseFloat(document.getElementById('w').value); const r = parseInt(document.getElementById('r').value); const ri = document.getElementById('rir').value;
-            if(!e || !w || !r) return alert("Faltan datos");
-            const newLog = { id: Date.now(), date: new Date().toLocaleDateString('es-AR', {day:'2-digit', month:'2-digit'}), ex: e, w: w, r: r, rir: ri };
-            logs.push(newLog); localStorage.setItem('plan90_logs', JSON.stringify(logs)); document.getElementById('w').value = ''; document.getElementById('r').value = ''; showHistory();
+        const gs=document.getElementById('group'), es=document.getElementById('ex'), hDiv=document.getElementById('history'), pDiv=document.getElementById('prev');
+        let logs=JSON.parse(localStorage.getItem('plan90_logs')||'[]');
+
+        if(typeof EXERCISES_DB!=='undefined'){Object.keys(EXERCISES_DB).forEach(g=>{let o=document.createElement('option');o.value=g;o.innerText=g;gs.appendChild(o);});}
+        function loadEx(){es.innerHTML='<option value="">Elegir...</option>';if(gs.value)EXERCISES_DB[gs.value].forEach(e=>{let o=document.createElement('option');o.value=e;o.innerText=e;es.appendChild(o);});updatePrev();}
+        function save(t){
+            let l={id:Date.now(),type:t,date:new Date().toLocaleDateString('es-AR',{day:'2-digit',month:'2-digit'})};
+            if(t==='train'){
+                l.title=es.value; let p=parseFloat(document.getElementById('w').value), r=parseInt(document.getElementById('r').value);
+                if(!l.title||!p||!r)return alert('Faltan datos');
+                l.data=`${p}kg x ${r}`; l.wVal=p; fin(l);
+            } else {
+                l.title="Check-in"; l.data=`Peso: ${document.getElementById('w-p').value}kg | Cint: ${document.getElementById('w-c').value}cm`;
+                l.note=`Fotos: ${document.getElementById('w-f').value}`;
+                let fi=document.getElementById('w-file'); if(fi.files[0]){let rd=new FileReader(); rd.onload=(e)=>{l.img=e.target.result;fin(l);};rd.readAsDataURL(fi.files[0]);}else{fin(l);}
+            }
         }
-        function showHistory() {
-            const currentEx = es.value; if(!currentEx) { hDiv.innerHTML = '<p style="color:#444; font-size:12px; text-align:center;">Selecciona un ejercicio para ver tu evolución</p>'; return; }
-            const filtered = logs.filter(l => l.ex === currentEx).reverse(); const best = filtered.length > 0 ? Math.max(...filtered.map(l => l.w)) : 0;
-            let html = ''; filtered.forEach(l => { const isBest = l.w === best ? '<span class="log-best">★ RÉCORD</span>' : ''; html += `<div class="log-item"><div><div class="log-date">${l.date}</div><strong>${l.w}kg x ${l.r}</strong> <span style="color:#666; font-size:11px;">(${l.rir})</span>${isBest}</div></div>`; });
-            hDiv.innerHTML = html || '<p style="color:#444; font-size:12px; text-align:center;">No hay registros previos.</p>';
+        function fin(l){logs.unshift(l);localStorage.setItem('plan90_logs',JSON.stringify(logs));loadH();updatePrev();}
+        function loadH(){
+            hDiv.innerHTML=logs.map(l=>{
+                let rTag=""; if(l.type==='train'){let b=Math.max(...logs.filter(h=>h.type==='train'&&h.title===l.title).map(h=>h.wVal||0));if(l.wVal===b)rTag='<span class="log-best">★ RÉCORD</span>';}
+                return `<div class="log-item"><div class="log-header"><span>${l.title}</span><span class="tag tag-${l.type}">${l.type}</span></div><div style="color:white;font-size:14px;">${l.data}</div><div style="color:#888;font-size:11px;">${l.note||""}</div>${rTag}${l.img?`<img src="${l.img}" style="width:100%;border-radius:4px;margin-top:8px;">`:''}<div style="font-size:9px;color:#444;margin-top:5px;">${l.date}</div></div>`;
+            }).join('');
         }
-        showHistory();
+        function updatePrev(){if(!es.value){pDiv.innerHTML='';return;}let f=logs.filter(l=>l.type==='train'&&l.title===es.value).slice(0,2);pDiv.innerHTML=f.map(l=>`• ${l.date}: ${l.data}`).join('<br>');}
+        window.onload=loadH;
     </script>
 </body>
 </html>
