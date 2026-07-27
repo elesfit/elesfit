@@ -131,7 +131,43 @@
             <div class="form-grid">
                 <div class="input-group full-width">
                     <label>Ejercicio</label>
-                    <input type="text" id="t-ejercicio" placeholder="Ej: Hack Squat">
+                    <select id="t-ejercicio">
+                        <option value="">Selecciona ejercicio...</option>
+                        <optgroup label="Pecho">
+                            <option value="Press inclinado en máquina (Hammer)">Press inclinado en máquina (Hammer)</option>
+                            <option value="Press plano (Smith o Máquina)">Press plano (Smith o Máquina)</option>
+                            <option value="Peck Deck (Contractora)">Peck Deck (Contractora)</option>
+                            <option value="Cruces en polea">Cruces en polea</option>
+                        </optgroup>
+                        <optgroup label="Espalda">
+                            <option value="Remo con barra o T-Bar">Remo con barra o T-Bar</option>
+                            <option value="Jalón neutro o Pull-up">Jalón neutro o Pull-up</option>
+                            <option value="Pullover en polea">Pullover en polea</option>
+                        </optgroup>
+                        <optgroup label="Piernas">
+                            <option value="Hack Squat">Hack Squat</option>
+                            <option value="Prensa 45°">Prensa 45°</option>
+                            <option value="Extensión de cuádriceps">Extensión de cuádriceps</option>
+                            <option value="Peso muerto rumano">Peso muerto rumano</option>
+                            <option value="Hip Thrust">Hip Thrust</option>
+                            <option value="Curl femoral sentado">Curl femoral sentado</option>
+                            <option value="Sentadilla búlgara">Sentadilla búlgara</option>
+                            <option value="Aductor en polea">Aductor en polea</option>
+                        </optgroup>
+                        <optgroup label="Bíceps/Tríceps/Hombro">
+                            <option value="Scott unilateral">Scott unilateral</option>
+                            <option value="Curl Inclinado">Curl Inclinado</option>
+                            <option value="Martillo con mancuernas">Martillo con mancuernas</option>
+                            <option value="Tríceps en polea">Tríceps en polea</option>
+                            <option value="Elevaciones laterales">Elevaciones laterales</option>
+                        </optgroup>
+                        <optgroup label="Gemelos">
+                            <option value="Gemelos de pie">Gemelos de pie</option>
+                            <option value="Gemelos en prensa">Gemelos en prensa</option>
+                            <option value="Gemelos sentado (sóleo)">Gemelos sentado (sóleo)</option>
+                        </optgroup>
+                        <option value="OTRO">-- OTRO (Escribir en nota) --</option>
+                    </select>
                 </div>
                 <div class="input-group">
                     <label>Peso (kg)</label>
