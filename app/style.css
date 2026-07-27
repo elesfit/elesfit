@@ -1,0 +1,1 @@
+:root { --bg: #000; --card: #111; --acc: #ff3e3e; --txt: #fff; } body { background: var(--bg); color: var(--txt); font-family: sans-serif; margin: 0; } .container { max-width: 500px; margin: 0 auto; padding: 20px; } .btn { display: block; background: var(--acc); padding: 20px; border-radius: 12px; text-align: center; text-decoration: none; color: #fff; font-weight: bold; }
