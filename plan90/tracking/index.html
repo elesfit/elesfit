@@ -27,12 +27,14 @@
         .btn-red { background: var(--accent-red); color: white; }
         .btn-blue { background: var(--accent-blue); color: white; }
         .history-list { margin-top: 30px; }
-        .log-item { background: #1a1a1a; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #222; }
-        .log-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; margin-bottom: 5px; }
+        .log-item { background: #1a1a1a; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #222; position: relative; }
+        .log-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; margin-bottom: 5px; padding-right: 20px; }
         .tag { font-size: 9px; padding: 2px 5px; border-radius: 3px; }
         .tag-train { background: rgba(255,62,62,0.2); color: var(--accent-red); }
         .tag-week { background: rgba(62,148,255,0.2); color: var(--accent-blue); }
         .log-best { color: var(--accent-gold); font-size: 9px; border: 1px solid var(--accent-gold); padding: 1px 4px; border-radius: 2px; }
+        .btn-del { position: absolute; top: 12px; right: 12px; color: #444; font-size: 14px; cursor: pointer; border: none; background: none; padding: 0; }
+        .btn-del:hover { color: var(--accent-red); }
     </style>
 </head>
 <body>
@@ -96,10 +98,28 @@
             }
         }
         function fin(l){logs.unshift(l);localStorage.setItem('plan90_logs',JSON.stringify(logs));loadH();updatePrev();}
+        
+        function deleteLog(id){
+            if(confirm('¿Eliminar este registro?')){
+                logs = logs.filter(l => l.id !== id);
+                localStorage.setItem('plan90_logs', JSON.stringify(logs));
+                loadH();
+                updatePrev();
+            }
+        }
+
         function loadH(){
             hDiv.innerHTML=logs.map(l=>{
                 let rTag=""; if(l.type==='train'){let b=Math.max(...logs.filter(h=>h.type==='train'&&h.title===l.title).map(h=>h.wVal||0));if(l.wVal===b)rTag='<span class="log-best">★ RÉCORD</span>';}
-                return `<div class="log-item"><div class="log-header"><span>${l.title}</span><span class="tag tag-${l.type}">${l.type}</span></div><div style="color:white;font-size:14px;">${l.data}</div><div style="color:#888;font-size:11px;">${l.note||""}</div>${rTag}${l.img?`<img src="${l.img}" style="width:100%;border-radius:4px;margin-top:8px;">`:''}<div style="font-size:9px;color:#444;margin-top:5px;">${l.date}</div></div>`;
+                return `<div class="log-item">
+                    <button class="btn-del" onclick="deleteLog(${l.id})">✕</button>
+                    <div class="log-header"><span>${l.title}</span><span class="tag tag-${l.type}">${l.type}</span></div>
+                    <div style="color:white;font-size:14px;">${l.data}</div>
+                    <div style="color:#888;font-size:11px;">${l.note||""}</div>
+                    ${rTag}
+                    ${l.img?`<img src="${l.img}" style="width:100%;border-radius:4px;margin-top:8px;">`:''}
+                    <div style="font-size:9px;color:#444;margin-top:5px;">${l.date}</div>
+                </div>`;
             }).join('');
         }
         function updatePrev(){if(!es.value){pDiv.innerHTML='';return;}let f=logs.filter(l=>l.type==='train'&&l.title===es.value).slice(0,2);pDiv.innerHTML=f.map(l=>`• ${l.date}: ${l.data}`).join('<br>');}
