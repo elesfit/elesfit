@@ -170,6 +170,14 @@
                     <input type="number" id="w-sueno" placeholder="Hs">
                 </div>
                 <div class="input-group">
+                    <label>Hombros (cm)</label>
+                    <input type="number" id="w-hombros" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <label>Pecho (cm)</label>
+                    <input type="number" id="w-pecho" placeholder="0">
+                </div>
+                <div class="input-group">
                     <label>Cintura (cm)</label>
                     <input type="number" id="w-cintura" placeholder="0">
                 </div>
@@ -178,8 +186,20 @@
                     <input type="number" id="w-brazo" placeholder="0">
                 </div>
                 <div class="input-group">
+                    <label>Muslo (cm)</label>
+                    <input type="number" id="w-muslo" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <label>Gemelo (cm)</label>
+                    <input type="number" id="w-gemelo" placeholder="0">
+                </div>
+                <div class="input-group full-width">
                     <label>Cardio / Pasos</label>
                     <input type="text" id="w-cardio" placeholder="Ej: 30m / 10k">
+                </div>
+                <div class="input-group full-width">
+                    <label>Fotos (Links)</label>
+                    <input type="text" id="w-fotos" placeholder="Ej: Link a Google Drive o iCloud">
                 </div>
             </div>
             <button class="btn-blue" onclick="saveLog('week')">GUARDAR SEMANA</button>
@@ -226,9 +246,9 @@
                 log.note = document.getElementById('t-nota').value;
                 if(!log.title) return alert('Escribe el ejercicio');
             } else if(type === 'week') {
-                log.title = "Semana Finalizada";
+                log.title = "Check-in Semanal";
                 log.data = `Peso: ${document.getElementById('w-peso').value}kg | Sueño: ${document.getElementById('w-sueno').value}hs`;
-                log.note = `Cintura: ${document.getElementById('w-cintura').value}cm · Brazo: ${document.getElementById('w-brazo').value}cm · Cardio: ${document.getElementById('w-cardio').value}`;
+                log.note = `Hombros: ${document.getElementById('w-hombros').value}cm · Pecho: ${document.getElementById('w-pecho').value}cm · Cintura: ${document.getElementById('w-cintura').value}cm · Brazo: ${document.getElementById('w-brazo').value}cm · Muslo: ${document.getElementById('w-muslo').value}cm · Gemelo: ${document.getElementById('w-gemelo').value}cm · Cardio/Pasos: ${document.getElementById('w-cardio').value} · Fotos: ${document.getElementById('w-fotos').value}`;
             } else if(type === 'month') {
                 log.title = "Auditoría Mensual";
                 log.data = `Decisión: ${document.getElementById('m-decision').value}`;
