@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELESFIT - Sistema 90kg V2.1</title>
+    <style>
+        :root { --dark-bg: #050505; --card-bg: #111111; --accent-red: #ff3e3e; --text-main: #ffffff; --text-dim: #a0a0a0; --gold: #ffd700; }
+        body { background-color: var(--dark-bg); color: var(--text-main); font-family: sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 650px; margin: 0 auto; }
+        header { text-align: center; border-bottom: 3px solid var(--accent-red); padding-bottom: 20px; margin-bottom: 30px; }
+        .nav-btn { display: block; width: 100%; padding: 20px; background: linear-gradient(135deg, #800000, #ff3e3e); color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: bold; margin-bottom: 25px; box-sizing: border-box; }
+        .card { background: var(--card-bg); border-radius: 15px; padding: 25px; margin-bottom: 25px; border-left: 5px solid var(--accent-red); }
+        h2 { color: var(--accent-red); font-size: 1.3em; margin-top: 0; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .item { background: #1a1a1a; padding: 12px; border-radius: 8px; border: 1px solid #333; }
+        .label { color: var(--text-dim); font-size: 0.75em; display: block; }
+        .val { font-weight: bold; color: #fff; }
+        .highlight { color: var(--gold); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SISTEMA <span style="color:var(--accent-red)">90KG</span> V2.1</h1>
+            <p>Leandro Espinosa | ELESFIT</p>
+        </header>
+        <a href="tracking/index.html" class="nav-btn">📊 ACCEDER AL LOGBOOK PROFESIONAL</a>
+        <section class="card">
+            <h2>🧪 PROTOCOLO FARMACOLÓGICO</h2>
+            <div class="grid">
+                <div class="item"><span class="label">Sustancia</span><span class="val">Testosterona Enantato</span></div>
+                <div class="item"><span class="label">Dosis Semanal</span><span class="val highlight">500mg</span></div>
+                <div class="item"><span class="label">Lu / Ju</span><span class="val">250mg / 250mg</span></div>
+            </div>
+        </section>
+        <section class="card" style="border-left-color: #3e94ff;">
+            <h2 style="color:#3e94ff;">📏 OBJETIVOS Y MÉTRICAS</h2>
+            <div class="grid">
+                <div class="item"><span class="label">Peso Meta</span><span class="val highlight">90kg</span></div>
+                <div class="item"><span class="label">Gemelos (Base)</span><span class="val">34 cm</span></div>
+                <div class="item"><span class="label">Gemelos (Meta)</span><span class="val highlight">39-41 cm</span></div>
+                <div class="item"><span class="label">Foco</span><span class="val">V-Taper (Hombros/Espalda)</span></div>
+            </div>
+        </section>
+        <section class="card">
+            <h2>🍎 NUTRICIÓN & BIO-FEEDBACK</h2>
+            <div class="grid">
+                <div class="item"><span class="label">Proteína</span><span class="val">230g-250g</span></div>
+                <div class="item"><span class="label">Grasas</span><span class="val">75g-85g</span></div>
+            </div>
+            <p style="color:var(--text-dim); font-size:0.8em; margin-top:15px;">Monitorizar: 🍏 Digestión, ⚡ Energía y 😴 Sueño.</p>
+        </section>
+        <section class="card">
+            <h2>🏋️ RUTINA PPL</h2>
+            <p>Lu: Empuje | Ma: Tracción | Mi: Pierna | Ju: Empuje | Vi: Tracción | Sa: Pierna</p>
+        </section>
+    </div>
+</body>
+</html>
