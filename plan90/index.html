@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELESFIT - Plan 90kg Professional System</title>
+    <style>
+        :root { --dark-bg: #050505; --card-bg: #111111; --accent-red: #ff3e3e; --text-main: #ffffff; --text-dim: #a0a0a0; --gold: #ffd700; }
+        body { background-color: var(--dark-bg); color: var(--text-main); font-family: sans-serif; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 650px; margin: 0 auto; }
+        header { text-align: center; border-bottom: 3px solid var(--accent-red); padding-bottom: 20px; margin-bottom: 30px; }
+        .logo { width: 120px; }
+        .nav-btn { display: block; width: 100%; padding: 22px; background: linear-gradient(135deg, #800000, #ff3e3e); color: white; text-align: center; text-decoration: none; border-radius: 15px; font-weight: bold; font-size: 1.2em; margin-bottom: 30px; box-sizing: border-box; text-transform: uppercase; }
+        .card { background: var(--card-bg); border-radius: 18px; padding: 25px; margin-bottom: 25px; border-left: 6px solid var(--accent-red); }
+        h2 { color: var(--accent-red); font-size: 1.4em; margin-top: 0; text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .item { background: #1a1a1a; padding: 15px; border-radius: 10px; border: 1px solid #333; }
+        .label { color: var(--text-dim); font-size: 0.8em; text-transform: uppercase; display: block; }
+        .val { font-weight: bold; font-size: 1.1em; color: #fff; }
+        .highlight { color: var(--gold); }
+        .routine-day { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #222; }
+        .day-name { color: var(--gold); font-weight: bold; text-transform: uppercase; }
+        .footer { text-align: center; color: #444; font-size: 0.8em; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../elesfit_logo.png" alt="ELESFIT" class="logo">
+            <h1>SISTEMA <span style="color:var(--accent-red)">90KG</span> V2.1</h1>
+            <p style="color: var(--text-dim);">LEANDRO ESPINOSA | ELITE PERFORMANCE</p>
+        </header>
+        <a href="tracking/index.html" class="nav-btn">📊 ACCEDER AL LOGBOOK PROFESIONAL</a>
+        <section class="card">
+            <h2>🧪 PROTOCOLO FARMACOLÓGICO</h2>
+            <div class="grid">
+                <div class="item"><span class="label">Sustancia</span><span class="val">Testosterona Enantato</span></div>
+                <div class="item"><span class="label">Dosis Semanal</span><span class="val highlight">500mg</span></div>
+                <div class="item"><span class="label">Días Aplicación</span><span class="val">Lunes / Jueves</span></div>
+                <div class="item"><span class="label">Cantidad</span><span class="val">250mg cada una</span></div>
+            </div>
+        </section>
+        <section class="card" style="border-left-color: #3e94ff;">
+            <h2>📏 OBJETIVOS Y MÉTRICAS</h2>
+            <div class="grid">
+                <div class="item"><span class="label">Peso Meta</span><span class="val highlight">90kg (Diciembre)</span></div>
+                <div class="item"><span class="label">Gemelos (Base)</span><span class="val">34 cm</span></div>
+                <div class="item"><span class="label">Gemelos (Meta)</span><span class="val highlight">39-41 cm</span></div>
+                <div class="item"><span class="label">Foco Estético</span><span class="val">V-Taper Focus</span></div>
+            </div>
+        </section>
+        <section class="card">
+            <h2>🍎 NUTRICIÓN & MACROS</h2>
+            <div class="grid">
+                <div class="item"><span class="label">Proteína</span><span class="val">230g - 250g</span></div>
+                <div class="item"><span class="label">Grasas</span><span class="val">75g - 85g</span></div>
+                <div class="item" style="grid-column: span 2;"><span class="label">Carbohidratos</span><span class="val">Superávit progresivo</span></div>
+            </div>
+        </section>
+        <section class="card">
+            <h2>🏋️ RUTINA PPL 2.0</h2>
+            <div class="routine-day"><span class="day-name">Lunes:</span> Empuje A (Pecho Pesado)</div>
+            <div class="routine-day"><span class="day-name">Martes:</span> Tracción A (Espalda Densidad)</div>
+            <div class="routine-day"><span class="day-name">Miércoles:</span> Pierna A (Cuádriceps/Gemelo)</div>
+            <div class="routine-day"><span class="day-name">Jueves:</span> Empuje B (Hombro/Pecho Superior)</div>
+            <div class="routine-day"><span class="day-name">Viernes:</span> Tracción B (Espalda Amplitud)</div>
+            <div class="routine-day"><span class="day-name">Sábado:</span> Pierna B (Isquios/Gemelo)</div>
+        </section>
+        <div class="footer">ELESFIT © 2026</div>
+    </div>
+</body>
+</html>
