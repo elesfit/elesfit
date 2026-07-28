@@ -3,61 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELESFIT - Plan 90kg</title>
+    <title>ELESFIT - Plan 90kg (V-Taper Edition)</title>
     <style>
         :root {
-            --dark-bg: #121212; --card-bg: #1e1e1e; --text-main: #ffffff;
-            --text-dim: #b0b0b0; --accent-red: #ff3e3e; --accent-blue: #3e94ff;
+            --dark-bg: #0a0a0a; --card-bg: #141414; --text-main: #ffffff;
+            --text-dim: #a0a0a0; --accent-red: #ff3e3e; --accent-blue: #3e94ff;
+            --accent-gold: #ffd700;
         }
-        body { background-color: var(--dark-bg); color: var(--text-main); font-family: sans-serif; margin: 0; padding: 15px; }
-        .container { max-width: 500px; margin: 0 auto; }
-        header { text-align: center; margin-bottom: 30px; }
-        h1 { color: var(--accent-red); margin: 5px 0; font-size: 32px; }
-        .logo { width: 80px; height: auto; }
-        .nav-btn { display: block; width: 100%; padding: 15px; background: var(--accent-red); color: white; text-align: center; text-decoration: none; border-radius: 10px; font-weight: bold; margin-bottom: 15px; box-sizing: border-box; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 20px; border-top: 3px solid var(--accent-red); }
-        .sec-title { color: var(--accent-red); font-size: 18px; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        .data-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; }
-        .data-label { color: var(--text-dim); }
-        .footer { text-align: center; font-size: 12px; color: var(--text-dim); margin-top: 40px; }
+        body { background-color: var(--dark-bg); color: var(--text-main); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; line-height: 1.5; }
+        .container { max-width: 600px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 25px; border-bottom: 2px solid var(--accent-red); padding-bottom: 20px; }
+        h1 { margin: 10px 0; font-size: 2.2em; letter-spacing: 2px; }
+        .nav-btn { display: block; width: 100%; padding: 18px; color: white; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; margin-bottom: 15px; box-sizing: border-box; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn-red { background: linear-gradient(45deg, #b30000, #ff3e3e); border: none; }
+        .btn-blue { background: linear-gradient(45deg, #0044cc, #3e94ff); border: none; }
+        
+        .card { background: var(--card-bg); border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #222; }
+        h2 { color: var(--accent-red); font-size: 1.2em; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 8px; text-transform: uppercase; }
+        .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9em; }
+        .data-item { background: #1c1c1c; padding: 10px; border-radius: 4px; border-left: 3px solid var(--accent-red); }
+        .label { color: var(--text-dim); display: block; font-size: 0.8em; margin-bottom: 4px; }
+        
+        .routine-day { margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .routine-day:last-child { border: none; }
+        .day-title { color: var(--accent-gold); font-weight: bold; }
+        
+        .footer { text-align: center; font-size: 11px; color: #444; margin-top: 50px; text-transform: uppercase; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="../elesfit_logo.png" alt="ELESFIT" class="logo">
-            <h1>PLAN 90KG</h1>
-            <p style="color: var(--text-dim); margin:0;">Leandro Espinosa - Objetivo Pico Diciembre</p>
+            <h1>ELESFIT <span style="color:var(--accent-red)">90KG</span></h1>
+            <p style="color: var(--text-dim); margin:0;">Usuario: Leandro Espinosa | Protocolo: 500mg Testo E</p>
         </header>
 
-        <a href="tracking/index.html" class="nav-btn">📊 LOGBOOK & SEGUIMIENTO</a>
-        <a href="estrategia.html" class="nav-btn" style="background: var(--accent-blue);">🛡️ GESTIÓN ESTRATÉGICA</a>
+        <a href="tracking/index.html" class="nav-btn btn-red">📊 LOGBOOK & SEGUIMIENTO (DÍA 0)</a>
+        <a href="estrategia.html" class="nav-btn btn-blue">🛡️ GESTIÓN ESTRATÉGICA (PROTOCOLOS)</a>
 
         <section class="card">
-            <h2 class="sec-title">💊 PROTOCOLO SEMANAL (500mg)</h2>
-            <div class="data-row"><span class="data-label">Testosterona E:</span> <span>500mg (2 x 250mg)</span></div>
-            <div class="data-row"><span class="data-label">Lunes:</span> <span>250mg</span></div>
-            <div class="data-row"><span class="data-label">Jueves:</span> <span>250mg</span></div>
+            <h2>🧪 FARMACOLOGÍA & SALUD</h2>
+            <div class="data-grid">
+                <div class="data-item"><span class="label">Compuesto</span>500mg Testosterona E</div>
+                <div class="data-item"><span class="label">Frecuencia</span>250mg (Lu) / 250mg (Ju)</div>
+                <div class="data-item"><span class="label">Protección</span>Anastrozol (si hay sensibilidad)</div>
+                <div class="data-item"><span class="label">Salud</span>Omega 3 + Multivitamínico</div>
+            </div>
         </section>
 
         <section class="card">
-            <h2 class="sec-title">🍎 NUTRICIÓN DIARIA</h2>
-            <div class="data-row"><span class="data-label">Proteína:</span> <span>220g - 240g</span></div>
-            <div class="data-row"><span class="data-label">Grasas:</span> <span>70g - 80g</span></div>
-            <div class="data-row"><span class="data-label">Carbohidratos:</span> <span>Resto hasta completar</span></div>
+            <h2>🥩 NUTRICIÓN - SUPERÁVIT</h2>
+            <div class="data-grid">
+                <div class="data-item"><span class="label">Proteína</span>2.5g x kg (~230g)</div>
+                <div class="data-item"><span class="label">Grasas</span>0.8g x kg (~75g)</div>
+                <div class="data-item" style="grid-column: span 2; border-left-color: var(--accent-gold);"><span class="label">Carbohidratos</span>Completar hasta superávit (+300-500 kcal)</div>
+            </div>
+            <p style="font-size: 0.8em; color: var(--text-dim); margin-top:10px;">*Priorizar digestión (🍏) en el Logbook.</p>
         </section>
 
         <section class="card">
-            <h2 class="sec-title">🏋️ RUTINA - PUSH / PULL / LEGS</h2>
-            <div class="data-row"><span>Lunes:</span> <span>Empuje (Pecho/Hombro/Tríceps)</span></div>
-            <div class="data-row"><span>Martes:</span> <span>Tracción (Espalda/Bíceps)</span></div>
-            <div class="data-row"><span>Miércoles:</span> <span>Piernas (Foco Cuádriceps)</span></div>
-            <div class="data-row"><span>Jueves:</span> <span>Empuje (Foco Hombros)</span></div>
-            <div class="data-row"><span>Viernes:</span> <span>Tracción (Foco Amplitud)</span></div>
-            <div class="data-row"><span>Sábado:</span> <span>Piernas (Foco Isquios/Gemelos)</span></div>
+            <h2>🏋️ ENTRENAMIENTO - PPL 2.0 (Foco V-Taper)</h2>
+            <div class="routine-day"><span class="day-title">LUNES (Empuje A):</span> Pecho Pesado + Lateral Delts</div>
+            <div class="routine-day"><span class="day-title">MARTES (Tracción A):</span> Espalda Densidad + Bíceps</div>
+            <div class="routine-day"><span class="day-title">MIÉRCOLES (Pierna A):</span> Cuádriceps (Hack/Prensa) + Gemelo</div>
+            <div class="routine-day"><span class="day-title">JUEVES (Empuje B):</span> Hombro Medial + Pecho Superior</div>
+            <div class="routine-day"><span class="day-title">VIERNES (Tracción B):</span> Espalda Amplitud (Lats) + Brazo</div>
+            <div class="routine-day"><span class="day-title">SÁBADO (Pierna B):</span> Isquios + Glúteo + Gemelo</div>
         </section>
 
-        <div class="footer">ELESFIT © 2026 - MENTALIDAD DE ACERO</div>
+        <section class="card" style="border-left-color: var(--accent-gold);">
+            <h2>📏 MÉTRICAS CRÍTICAS</h2>
+            <div class="data-grid">
+                <div class="data-item"><span class="label">Peso Meta</span>90kg (Diciembre)</div>
+                <div class="data-item"><span class="label">Gemelos</span>Meta: 39-41cm (Base: 34cm)</div>
+                <div class="data-item" style="grid-column: span 2;"><span class="label">Torso</span>Foco en expansión de espalda y hombros</div>
+            </div>
+        </section>
+
+        <div class="footer">ELESFIT - EVOLUCIÓN PROFESIONAL - 2026</div>
     </div>
 </body>
 </html>
