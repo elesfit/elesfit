@@ -6,24 +6,26 @@
     <title>ELESFIT - Sistema 90kg V2.1</title>
     <style>
         :root { --dark-bg: #050505; --card-bg: #111111; --accent-red: #ff3e3e; --text-main: #ffffff; --text-dim: #a0a0a0; --gold: #ffd700; }
-        body { background-color: var(--dark-bg); color: var(--text-main); font-family: sans-serif; margin: 0; padding: 20px; }
+        body { background-color: var(--dark-bg); color: var(--text-main); font-family: sans-serif; margin: 0; padding: 20px; line-height: 1.6; }
         .container { max-width: 650px; margin: 0 auto; }
         header { text-align: center; border-bottom: 3px solid var(--accent-red); padding-bottom: 20px; margin-bottom: 30px; }
-        .nav-btn { display: block; width: 100%; padding: 20px; background: linear-gradient(135deg, #800000, #ff3e3e); color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: bold; margin-bottom: 25px; box-sizing: border-box; }
-        .card { background: var(--card-bg); border-radius: 15px; padding: 25px; margin-bottom: 25px; border-left: 5px solid var(--accent-red); }
-        h2 { color: var(--accent-red); font-size: 1.3em; margin-top: 0; text-transform: uppercase; }
+        .logo { width: 120px; }
+        .nav-btn { display: block; width: 100%; padding: 22px; background: linear-gradient(135deg, #800000, #ff3e3e); color: white; text-align: center; text-decoration: none; border-radius: 15px; font-weight: bold; font-size: 1.2em; margin-bottom: 30px; box-sizing: border-box; text-transform: uppercase; }
+        .card { background: var(--card-bg); border-radius: 18px; padding: 25px; margin-bottom: 25px; border-left: 6px solid var(--accent-red); }
+        h2 { color: var(--accent-red); font-size: 1.4em; margin-top: 0; text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .item { background: #1a1a1a; padding: 12px; border-radius: 8px; border: 1px solid #333; }
-        .label { color: var(--text-dim); font-size: 0.75em; display: block; }
-        .val { font-weight: bold; color: #fff; }
+        .item { background: #1a1a1a; padding: 15px; border-radius: 10px; }
+        .label { color: var(--text-dim); font-size: 0.8em; text-transform: uppercase; display: block; margin-bottom: 5px; }
+        .val { font-weight: bold; font-size: 1.1em; color: #fff; }
         .highlight { color: var(--gold); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <img src="../elesfit_logo.png" alt="ELESFIT" class="logo">
             <h1>SISTEMA <span style="color:var(--accent-red)">90KG</span> V2.1</h1>
-            <p>Leandro Espinosa | ELESFIT</p>
+            <p style="color: var(--text-dim);">LEANDRO ESPINOSA | ELITE PERFORMANCE</p>
         </header>
         <a href="tracking/index.html" class="nav-btn">📊 ACCEDER AL LOGBOOK PROFESIONAL</a>
         <section class="card">
@@ -31,30 +33,32 @@
             <div class="grid">
                 <div class="item"><span class="label">Sustancia</span><span class="val">Testosterona Enantato</span></div>
                 <div class="item"><span class="label">Dosis Semanal</span><span class="val highlight">500mg</span></div>
-                <div class="item"><span class="label">Lu / Ju</span><span class="val">250mg / 250mg</span></div>
+                <div class="item"><span class="label">Aplicación A</span><span class="val">250mg (Lunes)</span></div>
+                <div class="item"><span class="label">Aplicación B</span><span class="val">250mg (Jueves)</span></div>
             </div>
         </section>
-        <section class="card" style="border-left-color: #3e94ff;">
-            <h2 style="color:#3e94ff;">📏 OBJETIVOS Y MÉTRICAS</h2>
+        <section class="card" style="border-left-color: #ffd700;">
+            <h2 style="color: #ffd700;">📏 OBJETIVOS ANTROPOMÉTRICOS</h2>
             <div class="grid">
-                <div class="item"><span class="label">Peso Meta</span><span class="val highlight">90kg</span></div>
+                <div class="item"><span class="label">Peso Meta</span><span class="val highlight">90kg (Diciembre)</span></div>
                 <div class="item"><span class="label">Gemelos (Base)</span><span class="val">34 cm</span></div>
                 <div class="item"><span class="label">Gemelos (Meta)</span><span class="val highlight">39-41 cm</span></div>
-                <div class="item"><span class="label">Foco</span><span class="val">V-Taper (Hombros/Espalda)</span></div>
+                <div class="item" style="grid-column: span 2;"><span class="label">Foco Estético</span><span class="val">Expansión V-Taper (Hombros / Espalda)</span></div>
             </div>
         </section>
         <section class="card">
-            <h2>🍎 NUTRICIÓN & BIO-FEEDBACK</h2>
+            <h2>🍎 NUTRICIÓN ESTRATÉGICA</h2>
             <div class="grid">
-                <div class="item"><span class="label">Proteína</span><span class="val">230g-250g</span></div>
-                <div class="item"><span class="label">Grasas</span><span class="val">75g-85g</span></div>
+                <div class="item"><span class="label">Proteína</span><span class="val">230g - 250g</span></div>
+                <div class="item"><span class="label">Grasas</span><span class="val">75g - 85g</span></div>
+                <div class="item" style="grid-column: span 2;"><span class="label">Carbohidratos</span><span class="val">Superávit Progresivo (+300/500 kcal)</span></div>
             </div>
-            <p style="color:var(--text-dim); font-size:0.8em; margin-top:15px;">Monitorizar: 🍏 Digestión, ⚡ Energía y 😴 Sueño.</p>
         </section>
         <section class="card">
-            <h2>🏋️ RUTINA PPL</h2>
-            <p>Lu: Empuje | Ma: Tracción | Mi: Pierna | Ju: Empuje | Vi: Tracción | Sa: Pierna</p>
+            <h2>🏋️ ESTRUCTURA PPL 2.0 (V-TAPER FOCUS)</h2>
+            <p>Lu: Empuje A | Ma: Tracción A | Mi: Pierna A | Ju: Empuje B | Vi: Tracción B | Sa: Pierna B</p>
         </section>
+        <div class="footer">ELESFIT © 2026 - EVOLUCIÓN PROFESIONAL</div>
     </div>
 </body>
 </html>
